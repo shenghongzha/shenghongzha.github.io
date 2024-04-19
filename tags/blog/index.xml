@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Blog on SanmuDang的博客</title>
-        <link>https://shenghongzha.github.io/tags/blog/</link>
+        <link>https://blog.mokuai.space/tags/blog/</link>
         <description>Recent content in Blog on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Thu, 18 Apr 2024 23:13:18 +0800</lastBuildDate><atom:link href="https://shenghongzha.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Apr 2024 23:13:18 +0800</lastBuildDate><atom:link href="https://blog.mokuai.space/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>用hugo搭建一个属于自己的博客</title>
-        <link>https://shenghongzha.github.io/post/blog-build/</link>
+        <link>https://blog.mokuai.space/post/blog-build/</link>
         <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
         
-        <guid>https://shenghongzha.github.io/post/blog-build/</guid>
-        <description>&lt;img src="https://shenghongzha.github.io/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
+        <guid>https://blog.mokuai.space/post/blog-build/</guid>
+        <description>&lt;img src="https://blog.mokuai.space/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
 &lt;p&gt;最近学习的许多东西，有温习以前学的知识，也有学的许多知识。学新的东西踩坑是无法避免的，这时就只能去网上搜索。但总有一些问题是别人从未遇到的，又不敢去stackflow提问（其实主要是英语有点差），这时就只能自己去琢磨，研究。自己这次跑通流程，但下次却又未必。于是便有用博客记录一下的想法，希望自己下次不会踩同样的坑，也希望别人下次遇到同样的问题时，能在我的博客的帮助下快速解决。所以这篇文章将主要记录我搭建这个博客从头到尾的一个过程以及中间遇到的问题与解决方案，希望对你有用。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;搭建博客系统&#34;&gt;
@@ -52,10 +52,10 @@
     &lt;a href=&#34;#%e5%ae%89%e8%a3%85hugo&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     安装Hugo
 &lt;/h4&gt;&lt;p&gt;官网在安装教程中有提到先决条件，如下图所示
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/prerequisites.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/prerequisites.png&#34;
 	width=&#34;1257&#34;
 	height=&#34;1099&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;先决条件&#34;
@@ -72,10 +72,10 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github&lt;/a&gt;直接下载自己系统对应的Releases的压缩包就行。Windows系统就下载下图红框的任意一个即可，推荐下载extended版。standard and extended的区别详见官网：&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/#editions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;standard and extended的区别&lt;/a&gt;
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/download-zip.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/download-zip.png&#34;
 	width=&#34;2479&#34;
 	height=&#34;1206&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;下载压缩包&#34;
@@ -89,10 +89,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;解压压缩包到任意位置
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/unzip.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/unzip.png&#34;
 	width=&#34;1296&#34;
 	height=&#34;595&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;解压压缩包&#34;
@@ -106,10 +106,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;添加环境变量，打开设置-系统性息（可右击“此电脑”，选择属性；或右击底下的windows图标选择系统），依次点击“高级系统设置”，“环境变量”。双击打开“Path”，新增一条，位置选择自己保存Hugo的目录。
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/set-env.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/set-env.png&#34;
 	width=&#34;2478&#34;
 	height=&#34;928&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 1&#34;
@@ -120,10 +120,10 @@
 		data-flex-basis=&#34;640px&#34;
 	
 &gt;
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/env.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/env.png&#34;
 	width=&#34;616&#34;
 	height=&#34;624&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 2&#34;
@@ -138,10 +138,10 @@
 &lt;li&gt;
 &lt;p&gt;检验是否配置环境变量成功，在任意一个目录下，右击, 选择“在终端中打开”,输入
 &lt;code&gt;hugo version&lt;/code&gt;,换回类似于如下结果即代表配置成功
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/check-env.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/check-env.png&#34;
 	width=&#34;1294&#34;
 	height=&#34;735&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;检验环境变量&#34;
@@ -152,10 +152,10 @@
 		data-flex-basis=&#34;422px&#34;
 	
 &gt;
-&lt;img src=&#34;https://shenghongzha.github.io/post/blog-build/check-env-ok.png&#34;
+&lt;img src=&#34;https://blog.mokuai.space/post/blog-build/check-env-ok.png&#34;
 	width=&#34;1858&#34;
 	height=&#34;373&#34;
-	srcset=&#34;https://shenghongzha.github.io/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, https://shenghongzha.github.io/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://blog.mokuai.space/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;配置环境变量成功&#34;
