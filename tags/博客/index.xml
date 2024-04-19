@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>博客 on SanmuDang的博客</title>
+        <link>http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/</link>
+        <description>Recent content in 博客 on SanmuDang的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-Hans</language>
+        <lastBuildDate>Thu, 18 Apr 2024 23:13:18 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>用hugo搭建一个属于自己的博客</title>
+        <link>http://localhost:1313/post/post/</link>
+        <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/post/</guid>
+        <description>&lt;img src="http://localhost:1313/post/post/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
+&lt;p&gt;最近学习的许多东西，有温习以前学的知识，也有学的许多知识。学新的东西踩坑是无法避免的，这时就只能去网上搜索。但总有一些问题是别人从未遇到的，又不敢去stackflow提问（其实主要是英语有点差），这时就只能自己去琢磨，研究。自己这次跑通流程，但下次却又未必。于是便有用博客记录一下的想法，希望自己下次不会踩同样的坑，也希望别人下次遇到同样的问题时，能在我的博客的帮助下快速解决。所以这篇文章将主要记录我搭建这个博客从头到尾的一个过程以及中间遇到的问题与解决方案，希望对你有用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;搭建博客系统&#34;&gt;
+    &lt;a href=&#34;#%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    搭建博客系统
+&lt;/h2&gt;&lt;h3 id=&#34;博客系统选型&#34;&gt;
+    &lt;a href=&#34;#%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f%e9%80%89%e5%9e%8b&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    博客系统选型
+&lt;/h3&gt;&lt;p&gt;对于博客系统，我只了解过以下三种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;wordpress.org&#34; &gt;WordPress&lt;/a&gt;,一款基于PHP的博客框架，或许因为PHP的原因，也或许是以前用过的原因，我对其印象不是那么好。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;gitbook.com/&#34; &gt;GitBook&lt;/a&gt;,之前学习某些知识，有些文档就是这个写的，感觉不是很符合我的审美，也果断放弃。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;vuepress.vuejs.org&#34; &gt;VuePress&lt;/a&gt;,不怎么会Vue，也就放弃了。
+至于我为何选择&lt;a class=&#34;link&#34; href=&#34;gohugo.io&#34; &gt;Hugo&lt;/a&gt;,来源于我看到的一篇“悟空非空也”的一篇博客文章“&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7002911266385707022&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;搭建个人博客，最想推荐的 10 大框架，强烈建议收藏&lt;/a&gt;”，大家也可以根据自己的个人需求选择适合自己的博客系统。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;博客系统构建&#34;&gt;
+    &lt;a href=&#34;#%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f%e6%9e%84%e5%bb%ba&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    博客系统构建
+&lt;/h3&gt;&lt;p&gt;❗以下博客系统的搭建基于Hugo&lt;/p&gt;
+&lt;h2 id=&#34;中间踩的一些坑和解决方案&#34;&gt;
+    &lt;a href=&#34;#%e4%b8%ad%e9%97%b4%e8%b8%a9%e7%9a%84%e4%b8%80%e4%ba%9b%e5%9d%91%e5%92%8c%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    中间踩的一些坑和解决方案
+&lt;/h2&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题">
+<title>用hugo搭建一个属于自己的博客</title>
+
+<link rel='canonical' href='http://localhost:1313/post/post/'>
+
+<link rel="stylesheet" href="/scss/style.min.b90fe9fc6936675c0e4ec01d88766d918d0e0aa2d959d131169ca02f68c27c9d.css"><meta property='og:title' content="用hugo搭建一个属于自己的博客">
+<meta property='og:description' content="本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题">
+<meta property='og:url' content='http://localhost:1313/post/post/'>
+<meta property='og:site_name' content='SanmuDang的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Stack' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2024-04-18T23:13:18&#43;08:00'/><meta property='article:modified_time' content='2024-04-18T23:13:18&#43;08:00'/><meta property='og:image' content='http://localhost:1313/post/post/stack-blog-cover.png' />
+<meta name="twitter:site" content="@shenghongzha">
+    <meta name="twitter:creator" content="@shenghongzha"><meta name="twitter:title" content="用hugo搭建一个属于自己的博客">
+<meta name="twitter:description" content="本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/post/stack-blog-cover.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/logo_huf54e575327a09cbd969f2f6ead2cc5e6_63235_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😄</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">SanmuDang的博客</a></h1>
+            <h2 class="site-description">人生得意须尽欢，莫使金樽空对月！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/shenghongzha'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/shenghongzha'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#搭建博客系统">搭建博客系统</a>
+      <ul>
+        <li><a href="#博客系统选型">博客系统选型</a></li>
+        <li><a href="#博客系统构建">博客系统构建</a></li>
+      </ul>
+    </li>
+    <li><a href="#中间踩的一些坑和解决方案">中间踩的一些坑和解决方案</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/post/">
+                <img src="/post/post/stack-blog-cover_hu914b6d0854c49bf02ef8dcafcb8f4589_90016_800x0_resize_box_3.png"
+                        srcset="/post/post/stack-blog-cover_hu914b6d0854c49bf02ef8dcafcb8f4589_90016_800x0_resize_box_3.png 800w, /post/post/stack-blog-cover_hu914b6d0854c49bf02ef8dcafcb8f4589_90016_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="234" 
+                        loading="lazy"
+                        alt="Featured image of post 用hugo搭建一个属于自己的博客" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/post/">用hugo搭建一个属于自己的博客</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 18, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>最近学习的许多东西，有温习以前学的知识，也有学的许多知识。学新的东西踩坑是无法避免的，这时就只能去网上搜索。但总有一些问题是别人从未遇到的，又不敢去stackflow提问（其实主要是英语有点差），这时就只能自己去琢磨，研究。自己这次跑通流程，但下次却又未必。于是便有用博客记录一下的想法，希望自己下次不会踩同样的坑，也希望别人下次遇到同样的问题时，能在我的博客的帮助下快速解决。所以这篇文章将主要记录我搭建这个博客从头到尾的一个过程以及中间遇到的问题与解决方案，希望对你有用。</p>
+</blockquote>
+<h2 id="搭建博客系统">
+    <a href="#%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f" class="header-anchor">#</a>
+    搭建博客系统
+</h2><h3 id="博客系统选型">
+    <a href="#%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f%e9%80%89%e5%9e%8b" class="header-anchor">#</a>
+    博客系统选型
+</h3><p>对于博客系统，我只了解过以下三种：</p>
+<ol>
+<li><a class="link" href="wordpress.org" >WordPress</a>,一款基于PHP的博客框架，或许因为PHP的原因，也或许是以前用过的原因，我对其印象不是那么好。</li>
+<li><a class="link" href="gitbook.com/" >GitBook</a>,之前学习某些知识，有些文档就是这个写的，感觉不是很符合我的审美，也果断放弃。</li>
+<li><a class="link" href="vuepress.vuejs.org" >VuePress</a>,不怎么会Vue，也就放弃了。
+至于我为何选择<a class="link" href="gohugo.io" >Hugo</a>,来源于我看到的一篇“悟空非空也”的一篇博客文章“<a class="link" href="https://juejin.cn/post/7002911266385707022"  target="_blank" rel="noopener"
+    >搭建个人博客，最想推荐的 10 大框架，强烈建议收藏</a>”，大家也可以根据自己的个人需求选择适合自己的博客系统。</li>
+</ol>
+<h3 id="博客系统构建">
+    <a href="#%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f%e6%9e%84%e5%bb%ba" class="header-anchor">#</a>
+    博客系统构建
+</h3><p>❗以下博客系统的搭建基于Hugo</p>
+<ul>
+<li>博客的搭建过程主要基于以下几个文档，有能力的同学可以自己阅读</li>
+</ul>
+<ol>
+<li><a class="link" href="https://gohugo.io/documentation/"  target="_blank" rel="noopener"
+    >Hugo官方文档</a></li>
+<li><a class="link" href="https://stack.jimmycai.com/config/"  target="_blank" rel="noopener"
+    >Stack主题官方文档</a></li>
+<li><a class="link" href="https://stack-docs.netlify.app/zh/writing/"  target="_blank" rel="noopener"
+    >Stack中文文档</a></li>
+<li><a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >giscus评论系统文档</a></li>
+<li><a class="link" href="https://docs.github.com/en/graphql/overview/explorer"  target="_blank" rel="noopener"
+    >github GraphQL API官方文档</a></li>
+</ol>
+<h4 id="安装hugo">
+    <a href="#%e5%ae%89%e8%a3%85hugo" class="header-anchor">#</a>
+    安装Hugo
+</h4><p>官网在安装教程中有提到先决条件，如下图所示
+<img src="/post/post/prerequisites.png"
+	width="1257"
+	height="1099"
+	srcset="/post/post/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, /post/post/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="先决条件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="114"
+		data-flex-basis="274px"
+	
+>
+不过我并未按照其配置这三种环境，我并不清楚不配置这是三种环境的问题，不过觉得并不会产生大的影响（毕竟我们并不需要从源码进行编译，使用编译好的即可），我的电脑上本身便具备Go语言环境与Git，在react中我又曾使用过过SASS，所以对于这“先决条件”，是否一定需要配置，还是自行决定。</p>
+<ol>
+<li>
+<p><a class="link" href="https://github.com/gohugoio/hugo"  target="_blank" rel="noopener"
+    >Github</a>直接下载自己系统对应的Releases的压缩包就行。Windows系统就下载下图红框的任意一个即可，推荐下载extended版。standard and extended的区别详见官网：<a class="link" href="https://gohugo.io/installation/windows/#editions"  target="_blank" rel="noopener"
+    >standard and extended的区别</a>
+<img src="/post/post/download-zip.png"
+	width="2479"
+	height="1206"
+	srcset="/post/post/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, /post/post/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="下载压缩包"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="205"
+		data-flex-basis="493px"
+	
+></p>
+</li>
+<li>
+<p>解压压缩包到任意位置
+<img src="/post/post/unzip.png"
+	width="1296"
+	height="595"
+	srcset="/post/post/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, /post/post/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="解压压缩包"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="217"
+		data-flex-basis="522px"
+	
+></p>
+</li>
+<li>
+<p>添加环境变量，打开设置-系统性息（可右击“此电脑”，选择属性；或右击底下的windows图标选择系统），依次点击“高级系统设置”，“环境变量”。双击打开“Path”，新增一条，位置选择自己保存Hugo的目录。
+<img src="/post/post/set-env.png"
+	width="2478"
+	height="928"
+	srcset="/post/post/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, /post/post/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="设置环境变量 1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="267"
+		data-flex-basis="640px"
+	
+>
+<img src="/post/post/env.png"
+	width="616"
+	height="624"
+	srcset="/post/post/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, /post/post/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="设置环境变量 2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="236px"
+	
+></p>
+</li>
+<li>
+<p>检验是否配置环境变量成功，在任意一个目录下，右击, 选择“在终端中打开”,输入
+<code>hugo version</code>,换回类似于如下结果即代表配置成功
+<img src="/post/post/check-env.png"
+	width="1294"
+	height="735"
+	srcset="/post/post/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, /post/post/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="检验环境变量"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="422px"
+	
+>
+<img src="/post/post/check-env-ok.png"
+	width="1858"
+	height="373"
+	srcset="/post/post/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, /post/post/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="配置环境变量成功"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="498"
+		data-flex-basis="1195px"
+	
+></p>
+</li>
+</ol>
+<h4 id="快速选择启动一个博客">
+    <a href="#%e5%bf%ab%e9%80%9f%e9%80%89%e6%8b%a9%e5%90%af%e5%8a%a8%e4%b8%80%e4%b8%aa%e5%8d%9a%e5%ae%a2" class="header-anchor">#</a>
+    快速选择启动一个博客
+</h4><p>以下内容参考官方文档的<a class="link" href="https://gohugo.io/getting-started/quick-start/"  target="_blank" rel="noopener"
+    >Quick start</a></p>
+<ol>
+<li>
+<p>进入你想要保存博客的文件，打开终端，输入指令<code>hugo new site blog</code></p>
+</li>
+<li>
+<p>进入创建出来的“blog”文件夹（将上面指令的“blog”可以任意更换，创建出的文件夹与指令中的名字保持一致），输入<code>hugo server</code>启动预览服务。</p>
+</li>
+</ol>
+<h4 id="安装一个好看的主题以stack为例">
+    <a href="#%e5%ae%89%e8%a3%85%e4%b8%80%e4%b8%aa%e5%a5%bd%e7%9c%8b%e7%9a%84%e4%b8%bb%e9%a2%98%e4%bb%a5stack%e4%b8%ba%e4%be%8b" class="header-anchor">#</a>
+    安装一个好看的主题（以Stack为例）
+</h4><p>以下内容参照Stack官方文档<a class="link" href="https://stack.jimmycai.com/guide/getting-started"  target="_blank" rel="noopener"
+    >Getting Started</a>，以Git子模块方式安装（默认读者需要自己使用git）。</p>
+<ol>
+<li>进入存放博客数据的文件夹，在上文中为“blog”文件夹， 使用以下命令安装主题。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+</span></span></code></pre></div><ol start="2">
+<li></li>
+</ol>
+<h2 id="中间踩的一些坑和解决方案">
+    <a href="#%e4%b8%ad%e9%97%b4%e8%b8%a9%e7%9a%84%e4%b8%80%e4%ba%9b%e5%9d%91%e5%92%8c%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="header-anchor">#</a>
+    中间踩的一些坑和解决方案
+</h2>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+            <a href="/tags/stack/">Stack</a>
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="shenghongzha/comments"
+    data-repo-id="R_kgDOLv4few"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLv4fe84CexaO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 SanmuDang的博客
+    </section>
+    
+    <section class="powerby">
+        
+            感谢各位老爷的支持 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
