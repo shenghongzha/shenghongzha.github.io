@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on SanmuDang的博客</title>
+        <link>https://blog.mokuai.space/page/</link>
+        <description>Recent content in Pages on SanmuDang的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-Hans</language>
+        <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.mokuai.space/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>归档</title>
+        <link>https://blog.mokuai.space/page/archives/</link>
+        <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.mokuai.space/page/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RSS订阅</title>
+        <link>https://blog.mokuai.space/page/rss/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.mokuai.space/page/rss/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://blog.mokuai.space/page/rss/rss.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;RSS订阅&#34;
+	
+	
+&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.mokuai.space/index.xml&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.mokuai.space/index.xml&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>https://blog.mokuai.space/page/about/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.mokuai.space/page/about/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://blog.mokuai.space/page/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.mokuai.space/page/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>友情链接</title>
+        <link>https://blog.mokuai.space/page/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.mokuai.space/page/links/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
