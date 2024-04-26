@@ -10,7 +10,7 @@
 <meta property='og:description' content="本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题">
 <meta property='og:url' content='https://blog.mokuai.space/post/blog-build/'>
 <meta property='og:site_name' content='SanmuDang的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Stack' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2024-04-18T23:13:18&#43;08:00'/><meta property='article:modified_time' content='2024-04-18T23:13:18&#43;08:00'/><meta property='og:image' content='https://blog.mokuai.space/post/blog-build/stack-blog-cover.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Stack' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2024-04-18T23:13:18&#43;08:00'/><meta property='article:modified_time' content='2024-04-21T00:02:54&#43;08:00'/><meta property='og:image' content='https://blog.mokuai.space/post/blog-build/stack-blog-cover.png' />
 <meta name="twitter:site" content="@shenghongzha">
     <meta name="twitter:creator" content="@shenghongzha"><meta name="twitter:title" content="用hugo搭建一个属于自己的博客">
 <meta name="twitter:description" content="本文将介绍使用Hugo搭建属于自己的博客，并使用与配置Stack主题"><meta name="twitter:card" content="summary_large_image">
@@ -258,7 +258,7 @@
 
 
 
-                        <span>暗色模式</span>
+                        <span>深色模式</span>
                     </li>
                 
             </ol>
@@ -287,21 +287,27 @@
         
         <div class="widget--toc">
             <nav id="TableOfContents">
-  <ul>
+  <ol>
     <li><a href="#搭建博客系统">搭建博客系统</a>
-      <ul>
+      <ol>
         <li><a href="#博客系统选型">博客系统选型</a></li>
-        <li><a href="#博客系统构建">博客系统构建</a></li>
+        <li><a href="#博客系统构建">博客系统构建</a>
+          <ol>
+            <li><a href="#安装hugo">安装Hugo</a></li>
+            <li><a href="#快速选择启动一个博客">快速选择启动一个博客</a></li>
+            <li><a href="#安装并配置一个好看的主题以stack为例">安装并配置一个好看的主题（以Stack为例）</a></li>
+          </ol>
+        </li>
         <li><a href="#写第一个博客">写第一个博客</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#中间踩的一些坑和解决方案">中间踩的一些坑和解决方案</a>
-      <ul>
+      <ol>
         <li><a href="#配置stack主题">配置Stack主题</a></li>
         <li><a href="#进行创作">进行创作</a></li>
-      </ul>
+      </ol>
     </li>
-  </ul>
+  </ol>
 </nav>
         </div>
     </section>
@@ -368,9 +374,12 @@
 </svg>
                 <time class="article-time--published">Apr 18, 2024</time>
             </div>
-        
-
-        
+        <div>
+                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714148450099" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1651" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M853.333333 501.333333c-17.066667 0-32 14.933333-32 32v320c0 6.4-4.266667 10.666667-10.666666 10.666667H170.666667c-6.4 0-10.666667-4.266667-10.666667-10.666667V213.333333c0-6.4 4.266667-10.666667 10.666667-10.666666h320c17.066667 0 32-14.933333 32-32s-14.933333-32-32-32H170.666667c-40.533333 0-74.666667 34.133333-74.666667 74.666666v640c0 40.533333 34.133333 74.666667 74.666667 74.666667h640c40.533333 0 74.666667-34.133333 74.666666-74.666667V533.333333c0-17.066667-14.933333-32-32-32z" fill="#8a8a8a" p-id="1652"></path><path d="M405.333333 484.266667l-32 125.866666c-2.133333 10.666667 0 23.466667 8.533334 29.866667 6.4 6.4 14.933333 8.533333 23.466666 8.533333h8.533334l125.866666-32c6.4-2.133333 10.666667-4.266667 14.933334-8.533333l300.8-300.8c38.4-38.4 38.4-102.4 0-140.8-38.4-38.4-102.4-38.4-140.8 0L413.866667 469.333333c-4.266667 4.266667-6.4 8.533333-8.533334 14.933334z m59.733334 23.466666L761.6 213.333333c12.8-12.8 36.266667-12.8 49.066667 0 12.8 12.8 12.8 36.266667 0 49.066667L516.266667 558.933333l-66.133334 17.066667 14.933334-68.266667z" fill="#8a8a8a" p-id="1653"></path></svg>
+                <time class="article-lastmod">
+                    Apr 21, 2024 00:02
+                </time>
+            </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -381,7 +390,15 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+        
+            <div>
+                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714145413837" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1673" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M889.412267 101.0944c-8.785067-9.6384-21.960533-9.6384-30.7456 0L628.078933 349.269333a24.8832 24.8832 0 0 0 0 33.732267c4.394667 4.821333 10.978133 7.227733 15.3728 7.227733 6.587733 0 10.978133-2.410667 15.3728-7.227733L889.412267 134.826667a24.8832 24.8832 0 0 0 0-33.732267z m-116.394667 265.0368v481.877333c0 7.232-6.587733 14.464-13.175467 14.464H206.429867c-6.587733 2.4064-13.175467-4.821333-13.175467-12.049066V204.6976c0-7.227733 6.587733-14.455467 13.175467-14.455467h423.8464c13.175467 0 21.960533-9.6384 21.960533-24.093866 0-14.455467-8.789333-24.093867-21.960533-24.093867H206.429867C175.684267 142.0544 149.333333 170.9696 149.333333 204.6976v645.725867C149.333333 884.155733 175.684267 913.066667 206.429867 913.066667h553.412266c32.938667 0 57.1008-28.910933 57.1008-62.6432V368.5376c0-14.455467-8.789333-26.500267-21.960533-26.500267-13.179733 0-21.9648 9.634133-21.9648 24.093867zM551.214933 416.725333h-256.938666c-13.179733 0-21.960533 9.634133-21.960534 24.093867 0 14.455467 8.7808 24.093867 21.960534 24.093867h254.7456c13.175467 0 21.960533-9.642667 21.960533-24.093867 0-14.459733-8.789333-24.093867-19.767467-24.093867z m-278.8992 255.394134c0 14.459733 8.7808 24.093867 21.960534 24.093866h377.728c13.1712 0 21.956267-9.634133 21.956266-24.093866 0-14.455467-8.785067-24.093867-21.960533-24.093867H294.272c-10.978133 0-21.956267 9.642667-21.956267 24.093867z" fill="#707070" p-id="1674"></path></svg> 
+                <time class="article-words">
+                    2875字
                 </time>
             </div>
         
@@ -574,219 +591,452 @@
 <ol>
 <li>进入存放博客数据的文件夹，在上文中为“blog”文件夹， 使用以下命令安装主题。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
-</span></span></code></pre></div><ol start="2">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
 <li>配置Stack主题。</li>
 </ol>
 <ul>
 <li>编辑“hugo.toml”，可更具以下模板进行更改。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;博客的链接&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;zh-Hans&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;博客的名字&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DefaultContentLanguage</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This will make .Summary and .WordCount behave correctly for CJK languages.</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hasCJKLanguage</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change it to your Disqus shortname before using</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;名字&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-theme-stack&#34;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseurl</span> <span class="p">=</span> <span class="s2">&#34;博客的链接&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-Hans&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">paginate</span> <span class="p">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;博客的名字&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">DefaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># This will make .Summary and .WordCount behave correctly for CJK languages.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Change it to your Disqus shortname before using</span>
+</span></span><span class="line"><span class="cl"><span class="nx">disqusShortname</span> <span class="p">=</span> <span class="s2">&#34;名字&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;hugo-theme-stack&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>在“blog”文件夹中创建“config”文件夹，并在“config”文件夹下创建“_default”文件夹，再在“_default”文件下创建&quot;menu.toml&quot;和“params.toml” 文件，其目录结构应如下：</li>
 </ul>
-<pre tabindex="0"><code class="language-tree" data-lang="tree">blog
-├─config
-│  └─_default
-│       ├─params.toml
-│       └─menu.toml
-├─...
-├─hugo.toml
-└─themes
-    └─hugo-theme-stack
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># ---------menu.toml-------------</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure main menu and social menu</span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;home&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Home&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/&#34;</span>
-</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">main</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;home&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">newtab</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">social</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;github&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;GitHub&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/xxxx&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;brand-github&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">social</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;twitter&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Twitter&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://twitter.com/xxxx&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">social</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;brand-twitter&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># ---------params.toml-------------</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pages placed under these sections will be shown on homepage and archive page.</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mainSections</span> = [<span style="color:#e6db74">&#34;post&#34;</span>]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output page&#39;s full content in RSS.</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rssFullContent</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">favicon</span> = <span style="color:#e6db74">&#34;/favicon.png&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">footer</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">since</span> = <span style="color:#ae81ff">2024</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">customText</span> = <span style="color:#e6db74">&#34;感谢各位老爷的支持&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">dateFormat</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">published</span> = <span style="color:#e6db74">&#34;Jan 02, 2006&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lastUpdated</span> = <span style="color:#e6db74">&#34;Jan 02, 2006 15:04 MST&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">sidebar</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">emoji</span> = <span style="color:#e6db74">&#34;😄&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">subtitle</span> = <span style="color:#e6db74">&#34;人生得意须尽欢，莫使金樽空对月！&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">compact</span> = <span style="color:#66d9ef">false</span> <span style="color:#75715e">#侧边栏精简版本</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">sidebar</span>.<span style="color:#a6e22e">avatar</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">src</span> = <span style="color:#e6db74">&#34;img/logo.jpg&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">article</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">math</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">readingTime</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">license</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;Licensed under CC BY-NC-SA 4.0&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Widgets</span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;search&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;archives&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;tag-cloud&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">homepage</span>.<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">widgets</span>.<span style="color:#a6e22e">page</span>]]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;toc&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">opengraph</span>.<span style="color:#a6e22e">twitter</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">site</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">card</span> = <span style="color:#e6db74">&#34;summary_large_image&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">defaultImage</span>.<span style="color:#a6e22e">opengraph</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">src</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">colorScheme</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">toggle</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;auto&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">imageProcessing</span>.<span style="color:#a6e22e">cover</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">imageProcessing</span>.<span style="color:#a6e22e">content</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Comments</span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">provider</span> = <span style="color:#e6db74">&#34;giscus&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">disqusjs</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">shortname</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">apiUrl</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">apiKey</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">adminLabel</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">utterances</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">issueTerm</span> = <span style="color:#e6db74">&#34;pathname&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">label</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">remark42</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">host</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">site</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">locale</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">vssue</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">platform</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">owner</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clientId</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clientSecret</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">autoCreateIssue</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">waline</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">serverURL</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lang</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">visitor</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">emoji</span> = [<span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#34;</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">requiredMeta</span> = [<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;email&#34;</span>, <span style="color:#e6db74">&#34;url&#34;</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">placeholder</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">waline</span>.<span style="color:#a6e22e">locale</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span> = <span style="color:#e6db74">&#34;Admin&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">twikoo</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">envId</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">path</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lang</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">cactus</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultHomeserverUrl</span> = <span style="color:#e6db74">&#34;https://matrix.cactus.chat:8448&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">serverName</span> = <span style="color:#e6db74">&#34;cactus.chat&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">siteName</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">giscus</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repoID</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">category</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">categoryID</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mapping</span> = <span style="color:#e6db74">&#34;pathname&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lightTheme</span> = <span style="color:#e6db74">&#34;light&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">darkTheme</span> = <span style="color:#e6db74">&#34;dark&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">reactionsEnabled</span> = <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">emitMetadata</span> = <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">gitalk</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">owner</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">admin</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clientID</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clientSecret</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">comments</span>.<span style="color:#a6e22e">cusdis</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">host</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">blog
+</span></span><span class="line"><span class="cl">├─config
+</span></span><span class="line"><span class="cl">│  └─_default
+</span></span><span class="line"><span class="cl">│       ├─params.toml
+</span></span><span class="line"><span class="cl">│       └─menu.toml
+</span></span><span class="line"><span class="cl">├─...
+</span></span><span class="line"><span class="cl">├─hugo.toml
+</span></span><span class="line"><span class="cl">└─themes
+</span></span><span class="line"><span class="cl">    └─hugo-theme-stack
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># ---------menu.toml-------------</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configure main menu and social menu</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Home&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">newtab</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">social</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;github&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;GitHub&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://github.com/xxxx&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">social</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;brand-github&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">social</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;twitter&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Twitter&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://twitter.com/xxxx&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">social</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">icon</span> <span class="p">=</span> <span class="s2">&#34;brand-twitter&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># ---------params.toml-------------</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Pages placed under these sections will be shown on homepage and archive page.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">mainSections</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;post&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Output page&#39;s full content in RSS.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">rssFullContent</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">favicon</span> <span class="p">=</span> <span class="s2">&#34;/favicon.png&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">footer</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">since</span> <span class="p">=</span> <span class="mi">2024</span>
+</span></span><span class="line"><span class="cl"><span class="nx">customText</span> <span class="p">=</span> <span class="s2">&#34;感谢各位老爷的支持&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dateFormat</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">published</span> <span class="p">=</span> <span class="s2">&#34;Jan 02, 2006&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lastUpdated</span> <span class="p">=</span> <span class="s2">&#34;Jan 02, 2006 15:04 MST&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">sidebar</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">emoji</span> <span class="p">=</span> <span class="s2">&#34;😄&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">subtitle</span> <span class="p">=</span> <span class="s2">&#34;人生得意须尽欢，莫使金樽空对月！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">compact</span> <span class="p">=</span> <span class="kc">false</span> <span class="c">#侧边栏精简版本</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">sidebar</span><span class="p">.</span><span class="nx">avatar</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">local</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/logo.jpg&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">article</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">math</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">readingTime</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">article</span><span class="p">.</span><span class="nx">license</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">default</span> <span class="p">=</span> <span class="s2">&#34;Licensed under CC BY-NC-SA 4.0&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">## Widgets</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;search&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;archives&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">limit</span> <span class="p">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">limit</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;tag-cloud&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">homepage</span><span class="p">.</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">limit</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">page</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;toc&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">opengraph</span><span class="p">.</span><span class="nx">twitter</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">site</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">card</span> <span class="p">=</span> <span class="s2">&#34;summary_large_image&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">defaultImage</span><span class="p">.</span><span class="nx">opengraph</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">local</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">colorScheme</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">toggle</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">default</span> <span class="p">=</span> <span class="s2">&#34;auto&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">imageProcessing</span><span class="p">.</span><span class="nx">cover</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">imageProcessing</span><span class="p">.</span><span class="nx">content</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">## Comments</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">provider</span> <span class="p">=</span> <span class="s2">&#34;giscus&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">disqusjs</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">shortname</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">apiUrl</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">apiKey</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">admin</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">adminLabel</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">utterances</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">issueTerm</span> <span class="p">=</span> <span class="s2">&#34;pathname&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">label</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">remark42</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">host</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">site</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">locale</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">vssue</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">platform</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">owner</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">clientId</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">clientSecret</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">autoCreateIssue</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">waline</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">serverURL</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lang</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">visitor</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">avatar</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">emoji</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">requiredMeta</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="s2">&#34;email&#34;</span><span class="p">,</span> <span class="s2">&#34;url&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">placeholder</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">waline</span><span class="p">.</span><span class="nx">locale</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">admin</span> <span class="p">=</span> <span class="s2">&#34;Admin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">twikoo</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">envId</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">region</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">path</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lang</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">cactus</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">defaultHomeserverUrl</span> <span class="p">=</span> <span class="s2">&#34;https://matrix.cactus.chat:8448&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">serverName</span> <span class="p">=</span> <span class="s2">&#34;cactus.chat&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">siteName</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">repoID</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">categoryID</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">mapping</span> <span class="p">=</span> <span class="s2">&#34;pathname&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lightTheme</span> <span class="p">=</span> <span class="s2">&#34;light&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">darkTheme</span> <span class="p">=</span> <span class="s2">&#34;dark&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">reactionsEnabled</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">emitMetadata</span> <span class="p">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">owner</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">admin</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">clientID</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">clientSecret</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">comments</span><span class="p">.</span><span class="nx">cusdis</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">host</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">id</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><a class="link" href="https://maling.io/posts/get-github-repo-id/"  target="_blank" rel="noopener"
     >Github 如何获取仓库的 repo_id 和 category_id</a></li>
 </ul>
@@ -861,7 +1111,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后修改于 Apr 21, 2024 00:02
+        </span>
+    </section></footer>
 
 
     
