@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>吐槽 on SanmuDang的博客</title>
-        <link>https://blog.mokuai.space/tags/%E5%90%90%E6%A7%BD/</link>
+        <link>http://localhost:1313/tags/%E5%90%90%E6%A7%BD/</link>
         <description>Recent content in 吐槽 on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sat, 20 Apr 2024 10:00:26 +0800</lastBuildDate><atom:link href="https://blog.mokuai.space/tags/%E5%90%90%E6%A7%BD/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Apr 2024 10:00:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%90%90%E6%A7%BD/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>吐槽一下科研工程与实践（不止）</title>
-        <link>https://blog.mokuai.space/post/roast-research-engineering-and-practice/</link>
+        <link>http://localhost:1313/post/roast-research-engineering-and-practice/</link>
         <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
         
-        <guid>https://blog.mokuai.space/post/roast-research-engineering-and-practice/</guid>
-        <description>&lt;img src="https://blog.mokuai.space/post/roast-research-engineering-and-practice/roast-research-engineering-and-practice.png" alt="Featured image of post 吐槽一下科研工程与实践（不止）" /&gt;&lt;ul&gt;
+        <guid>http://localhost:1313/post/roast-research-engineering-and-practice/</guid>
+        <description>&lt;img src="http://localhost:1313/post/roast-research-engineering-and-practice/roast-research-engineering-and-practice.png" alt="Featured image of post 吐槽一下科研工程与实践（不止）" /&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;以下所有内容均为本人狭义观点，带有强烈情绪，请理性看待，如有错误请联系我纠正或删除&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -24,10 +24,10 @@
 &lt;/h2&gt;&lt;p&gt;关于这门课，主要是因为培养方案改变而孕育而生的的。西电有一个传统（应该是传统吧），大一入学后，会有一个新生入学考试，考试科目是三门：数学、英语、物理。然后可以选择提前大类分流（正常是大一结束进行分流，根据大一考试综测进行填报志愿分流），进入细分专业的教改班或卓越班或其他特殊班（一般的学院都是这俩个班，空间学院好像只有一个特殊班——钱学森班），我们那一届的通知是:&lt;a class=&#34;link&#34; href=&#34;https://jwc.xidian.edu.cn/info/1012/12185.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;关于2022级学生实验班选拔的通知&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;我呢，算的上幸运，或者也能说不幸运。22年入学，刚好赶上西安新冠疫情，然后被迫推迟开学，同样的开学考试也推迟了。西安疫情结束了，我们那有疫情了，因此来学校就只能隔离了，我记得当初来学校要在西南角的彩钢瓦房隔离一周，值得一提的是，在校内隔离永远是俩人一间（我之后还隔离了一次，大一下阳了），隔离完已经将近国庆假期了，好像只差几天。好了，回归正题，入学考试时，我刚好在隔离，便申请线上考试，我的临时室友是大三的，他已经经历过许多次线上考试。我的临时室友便给我传授线上考试经验，如何在“上有对策下”生存
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/first-exam.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/first-exam.jpg&#34;
 	width=&#34;1170&#34;
 	height=&#34;765&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_480x0_resize_q75_box.jpg 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_480x0_resize_q75_box.jpg 480w, http://localhost:1313/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;新生入学能力测试&#34;
@@ -39,10 +39,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;具体的监考政策如下图所示，我的临时是由告诉我，可以通过电脑腾讯会议去拍摄全身，用另一台电脑接受试卷，自己的手机登录同一账号，再接受一份试卷，电脑进入腾讯会议可以手动关闭麦克风权限，但在其他人看来，你是开着的，他为此还专门给我演示了一下。考试时，用他电脑对我进行会议录像，然后他用我手机接受试卷，并且用他自己手机进行拍照搜题，而我用自己电脑正常接受试卷，并做题。如果有不会的，直接问他就行，因为会议录不到声音，此方案完全安全。
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/web-exam.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/web-exam.png&#34;
 	width=&#34;2142&#34;
 	height=&#34;973&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;线上考试注意事项&#34;
@@ -53,10 +53,10 @@
 		data-flex-basis=&#34;528px&#34;
 	
 &gt;
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/slot-requirement.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/slot-requirement.png&#34;
 	width=&#34;1129&#34;
 	height=&#34;973&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;机位要求&#34;
@@ -70,10 +70,10 @@
 &lt;p&gt;虽然有了这个“鼎力相助”的室友，但是其实我本没有怎么作弊，他每次问我，第x题需要不要，我的回答就是不需要，毕竟刚上大学，还是胆怯，即使在正式考试前，我俩已经试过，但我还是没有不放心，害怕作弊被抓，所以，即使有一套标准的作案流程。我还是诚信考试。&lt;/p&gt;
 &lt;p&gt;不过也是运气使然，即使自己当初基本已经忘得差不多，但还是凭借运气，考了不错的成绩（或许吧），在来西电前，便听说西电&lt;a class=&#34;link&#34; href=&#34;https://www.cdgdc.edu.cn/dslxkpgjggb/index.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第四次学科评估&lt;/a&gt;中，“电子科学与技术”评得A+，全国第一，那时可谓心驰神往。直冲“电子科学与技术”专业教改班。过了一段时间，便通知我面试，我记得当初要面试名单就30多人，我还在担心能不能面试通过。结果吧，其实面试就没什么压力，基本是去面试就通过，23人组成了最开始的电子科学与技术教改班。
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/el-first.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/el-first.png&#34;
 	width=&#34;1467&#34;
 	height=&#34;985&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;第四次学科评估——电子科学与技术&#34;
@@ -100,10 +100,10 @@
 &lt;li&gt;重创新&lt;/li&gt;
 &lt;li&gt;宽视野
 具体内容如下图所示：
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/three-point-demand.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/three-point-demand.png&#34;
 	width=&#34;519&#34;
 	height=&#34;783&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;三点内容&#34;
@@ -116,10 +116,10 @@
 &gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;关于第二点重创新而言，下文中又提及双导师制
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/double-tutor.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/double-tutor.png&#34;
 	width=&#34;499&#34;
 	height=&#34;399&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;双导师制&#34;
@@ -141,10 +141,10 @@
 &lt;p&gt;我所选的导师是计算成像课题组的，他便给我们给安排第一次上课，先带我们简单了解一下什么是计算成像。但一道砍后有另一道坎，我们根本无法理解任何有关“计算成像”的专业知识，只能像科普一样知道什么计算成像可以向仿生角度上创新之类话，比如：什么动物眼睛可以看到墙的另一边；什么动物眼睛有一圈等。老师其实也很无奈，我们基础知识欠的或许有点多，任何光学的课程都未曾开设（直接有关光学的课程得等到大三开开设），需要注意的是，我们当初还在上大学物理。&lt;/p&gt;
 &lt;p&gt;或许我们太忙，也或许我们没有任何基础，导师难以雕刻我们这些石头。也或许我没有提前了解导师的性格，只关注了自己的兴趣点，选到了“散养性”导师。期中答辩前，我们仅与导师见了那仅有的一面。期中答辩来的很快。&lt;/p&gt;
 &lt;p&gt;考试前还是刚考完期中，负责人便在群里通知我们期中答辩，要求我们完成论文（其实形式也不一定要求是论文）与ppt进行提交。
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/mid-term-oral-examination.png&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/mid-term-oral-examination.png&#34;
 	width=&#34;1131&#34;
 	height=&#34;498&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_480x0_resize_box_3.png 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_480x0_resize_box_3.png 480w, http://localhost:1313/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;中期答辩&#34;
@@ -183,10 +183,10 @@
     &lt;a href=&#34;#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     写在最后
 &lt;/h2&gt;&lt;p&gt;对了，今天答辩结束，负责人发了一张表（如下图）。这一刻，我好像发现了一个循环，好像找到了教育滞后性。
-&lt;img src=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/research-chat.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/research-chat.jpg&#34;
 	width=&#34;1280&#34;
 	height=&#34;1742&#34;
-	srcset=&#34;https://blog.mokuai.space/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_480x0_resize_q75_box.jpg 480w, https://blog.mokuai.space/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_480x0_resize_q75_box.jpg 480w, http://localhost:1313/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2022级光电工程学院教改班课程设置调查表&#34;

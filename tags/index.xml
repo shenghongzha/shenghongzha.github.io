@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on SanmuDang的博客</title>
-        <link>https://blog.mokuai.space/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Recent content in Tags on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sat, 20 Apr 2024 10:00:26 +0800</lastBuildDate><atom:link href="https://blog.mokuai.space/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>大学</title>
-        <link>https://blog.mokuai.space/tags/%E5%A4%A7%E5%AD%A6/</link>
-        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
-        
-        <guid>https://blog.mokuai.space/tags/%E5%A4%A7%E5%AD%A6/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>科研</title>
-        <link>https://blog.mokuai.space/tags/%E7%A7%91%E7%A0%94/</link>
-        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
-        
-        <guid>https://blog.mokuai.space/tags/%E7%A7%91%E7%A0%94/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>吐槽</title>
-        <link>https://blog.mokuai.space/tags/%E5%90%90%E6%A7%BD/</link>
-        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
-        
-        <guid>https://blog.mokuai.space/tags/%E5%90%90%E6%A7%BD/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>西电</title>
-        <link>https://blog.mokuai.space/tags/%E8%A5%BF%E7%94%B5/</link>
-        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
-        
-        <guid>https://blog.mokuai.space/tags/%E8%A5%BF%E7%94%B5/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>作弊</title>
-        <link>https://blog.mokuai.space/tags/%E4%BD%9C%E5%BC%8A/</link>
-        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
-        
-        <guid>https://blog.mokuai.space/tags/%E4%BD%9C%E5%BC%8A/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Wed, 01 May 2024 21:08:43 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Blog</title>
-        <link>https://blog.mokuai.space/tags/blog/</link>
-        <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
+        <link>http://localhost:1313/tags/blog/</link>
+        <pubDate>Wed, 01 May 2024 21:08:43 +0800</pubDate>
         
-        <guid>https://blog.mokuai.space/tags/blog/</guid>
+        <guid>http://localhost:1313/tags/blog/</guid>
         <description></description>
         </item>
         <item>
         <title>Hugo</title>
-        <link>https://blog.mokuai.space/tags/hugo/</link>
-        <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
+        <link>http://localhost:1313/tags/hugo/</link>
+        <pubDate>Wed, 01 May 2024 21:08:43 +0800</pubDate>
         
-        <guid>https://blog.mokuai.space/tags/hugo/</guid>
+        <guid>http://localhost:1313/tags/hugo/</guid>
         <description></description>
         </item>
         <item>
         <title>Stack</title>
-        <link>https://blog.mokuai.space/tags/stack/</link>
-        <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
+        <link>http://localhost:1313/tags/stack/</link>
+        <pubDate>Wed, 01 May 2024 21:08:43 +0800</pubDate>
         
-        <guid>https://blog.mokuai.space/tags/stack/</guid>
+        <guid>http://localhost:1313/tags/stack/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>大学</title>
+        <link>http://localhost:1313/tags/%E5%A4%A7%E5%AD%A6/</link>
+        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E5%A4%A7%E5%AD%A6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>科研</title>
+        <link>http://localhost:1313/tags/%E7%A7%91%E7%A0%94/</link>
+        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E7%A7%91%E7%A0%94/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>吐槽</title>
+        <link>http://localhost:1313/tags/%E5%90%90%E6%A7%BD/</link>
+        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E5%90%90%E6%A7%BD/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>西电</title>
+        <link>http://localhost:1313/tags/%E8%A5%BF%E7%94%B5/</link>
+        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E8%A5%BF%E7%94%B5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>作弊</title>
+        <link>http://localhost:1313/tags/%E4%BD%9C%E5%BC%8A/</link>
+        <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E4%BD%9C%E5%BC%8A/</guid>
         <description></description>
         </item>
         
