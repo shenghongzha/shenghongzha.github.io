@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on SanmuDang的博客</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>http://localhost:2944/categories/</link>
         <description>Recent content in Categories on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sun, 05 May 2024 21:06:45 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 Aug 2024 13:31:08 +0800</lastBuildDate><atom:link href="http://localhost:2944/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>技术</title>
-        <link>http://localhost:1313/categories/tech/</link>
+        <link>http://localhost:2944/categories/tech/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/tech/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/tech/tech.png" alt="Featured image of post 技术" /&gt;</description>
+        <guid>http://localhost:2944/categories/tech/</guid>
+        <description>&lt;img src="http://localhost:2944/categories/tech/tech.png" alt="Featured image of post 技术" /&gt;</description>
         </item>
         <item>
         <title>杂记</title>
-        <link>http://localhost:1313/categories/jotting/</link>
+        <link>http://localhost:2944/categories/jotting/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/jotting/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/jotting/jotting.png" alt="Featured image of post 杂记" /&gt;</description>
+        <guid>http://localhost:2944/categories/jotting/</guid>
+        <description>&lt;img src="http://localhost:2944/categories/jotting/jotting.png" alt="Featured image of post 杂记" /&gt;</description>
         </item>
         
     </channel>

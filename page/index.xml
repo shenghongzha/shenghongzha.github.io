@@ -2,25 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on SanmuDang的博客</title>
-        <link>http://localhost:1313/page/</link>
+        <link>http://localhost:2944/page/</link>
         <description>Recent content in Pages on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 13 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:2944/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>语录</title>
+        <link>http://localhost:2944/page/saying/</link>
+        <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:2944/page/saying/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;抱怨实质上就是因为事物并未符合自己所构想的方向发展罢了.&lt;/li&gt;
+&lt;li&gt;努力不一定有回报，但你的钢铁身躯会记住的你的经历.&lt;/li&gt;
+&lt;li&gt;人总会在接近死亡时才会害怕死亡.&lt;/li&gt;
+&lt;li&gt;现在失败可能是在还过去的债.&lt;/li&gt;
+&lt;li&gt;只有在悬崖之巅、绝境之中，人才会拼劲全力！&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>归档</title>
-        <link>http://localhost:1313/page/archives/</link>
+        <link>http://localhost:2944/page/archives/</link>
         <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/archives/</guid>
+        <guid>http://localhost:2944/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>RSS订阅</title>
-        <link>http://localhost:1313/page/rss/</link>
+        <link>http://localhost:2944/page/rss/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/rss/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/page/rss/rss.svg&#34;
+        <guid>http://localhost:2944/page/rss/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:2944/page/rss/rss.svg&#34;
 	
 	
 	
@@ -35,21 +50,15 @@
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/page/about/</link>
+        <link>http://localhost:2944/page/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/about/</guid>
-        <description>&lt;h2 id=&#34;我是谁&#34;&gt;
-    &lt;a href=&#34;#%e6%88%91%e6%98%af%e8%b0%81&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    我是谁？
-&lt;/h2&gt;&lt;p&gt;我叫DanmuDang（霍山散木）或shenghongzha（生红渣），是一个末流211本科在读学生，想要保研，却苦苦挣扎在英语六级之中；又想要工作，却发现自己什么都不会。&lt;/p&gt;
-&lt;h2 id=&#34;博客写什么&#34;&gt;
-    &lt;a href=&#34;#%e5%8d%9a%e5%ae%a2%e5%86%99%e4%bb%80%e4%b9%88&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    博客写什么？
+        <guid>http://localhost:2944/page/about/</guid>
+        <description>&lt;h2 id=&#34;我是谁&#34;&gt;我是谁？
+&lt;/h2&gt;&lt;p&gt;我叫SanmuDang（霍山散木）或shenghongzha（生红渣），是一个末流211本科在读学生，想要保研，却苦苦挣扎在英语六级之中；又想要工作，却发现自己什么都不会。&lt;/p&gt;
+&lt;h2 id=&#34;博客写什么&#34;&gt;博客写什么？
 &lt;/h2&gt;&lt;p&gt;这个博客主要分享一些我的所见所闻所感，平时记录一下我的学习过程。&lt;/p&gt;
-&lt;h2 id=&#34;名字的由来&#34;&gt;
-    &lt;a href=&#34;#%e5%90%8d%e5%ad%97%e7%9a%84%e7%94%b1%e6%9d%a5&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    名字的由来
+&lt;h2 id=&#34;名字的由来&#34;&gt;名字的由来
 &lt;/h2&gt;&lt;p&gt;shenghongzha中文“生红渣”的全拼，来源于“我的世界”这款游戏，我喜欢玩其中的生存模式与红石（生电爱好者），但是吧，又比较菜，因此加单字“渣”，取名“生红渣”。是我早期的名称。&lt;/p&gt;
 &lt;p&gt;霍山散木，分别取自《山海经·卷五·中山经》与《庄子·人间世》中。据山海经记载，在霍山之中，有一神兽——腓腓，养它可以消除忧愁。庄子中记载，散木是没有用的木头。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -58,9 +67,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;匠石之齐，至于曲辕，见栎社树。其大蔽数千牛，絜之百围，其高临山十仞而后有枝，其可以为舟者旁十数。观者如市，匠石不顾，遂行不辍。弟子厌观之，走及匠石，曰：「自吾执斧斤以随夫子，未尝见材如此其美也。先生不肯视，行不辍，何邪？」 曰：「已矣，勿言之矣！散木也，以为舟则沈，以为棺椁则速腐，以为器则速毁，以为门户则液樠，以为柱则蠹。是不材之木也，无所可用，故能若是之寿。——《庄子·人间世》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;感谢&#34;&gt;
-    &lt;a href=&#34;#%e6%84%9f%e8%b0%a2&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    感谢
+&lt;h2 id=&#34;感谢&#34;&gt;感谢
 &lt;/h2&gt;&lt;p&gt;本博客由&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hugo&lt;/a&gt;构建&lt;/p&gt;
 &lt;p&gt;本博客具体基于&lt;a class=&#34;link&#34; href=&#34;https://jimmycai.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -72,22 +79,22 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/page/search/</link>
+        <link>http://localhost:2944/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/search/</guid>
+        <guid>http://localhost:2944/page/search/</guid>
         <description></description>
         </item>
         <item>
         <title>微信公众号</title>
-        <link>http://localhost:1313/page/wechat/</link>
+        <link>http://localhost:2944/page/wechat/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/wechat/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/page/wechat/wechat.jpg&#34;
+        <guid>http://localhost:2944/page/wechat/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:2944/page/wechat/wechat.jpg&#34;
 	width=&#34;1050&#34;
 	height=&#34;1164&#34;
-	srcset=&#34;http://localhost:1313/page/wechat/wechat_hu3e0f2d5aa6180df20bb553ed5c6fa57b_186419_480x0_resize_q75_box.jpg 480w, http://localhost:1313/page/wechat/wechat_hu3e0f2d5aa6180df20bb553ed5c6fa57b_186419_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:2944/page/wechat/wechat_hu3e0f2d5aa6180df20bb553ed5c6fa57b_186419_480x0_resize_q75_box.jpg 480w, http://localhost:2944/page/wechat/wechat_hu3e0f2d5aa6180df20bb553ed5c6fa57b_186419_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;微信公众号二维码&#34;
@@ -102,10 +109,10 @@
         </item>
         <item>
         <title>友情链接</title>
-        <link>http://localhost:1313/page/links/</link>
+        <link>http://localhost:2944/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/links/</guid>
+        <guid>http://localhost:2944/page/links/</guid>
         <description></description>
         </item>
         
