@@ -2,17 +2,499 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on SanmuDang的博客</title>
-        <link>http://localhost:2944/post/</link>
+        <link>http://localhost:7447/post/</link>
         <description>Recent content in Posts on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Fri, 09 Aug 2024 13:31:08 +0800</lastBuildDate><atom:link href="http://localhost:2944/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 11 Aug 2024 12:53:36 +0800</lastBuildDate><atom:link href="http://localhost:7447/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>搭建Minecraft联机服务器教程</title>
+        <link>http://localhost:7447/post/minecraft-server/</link>
+        <pubDate>Sun, 11 Aug 2024 12:53:36 +0800</pubDate>
+        
+        <guid>http://localhost:7447/post/minecraft-server/</guid>
+        <description>&lt;img src="http://localhost:7447/post/minecraft-server/MCSM.png" alt="Featured image of post 搭建Minecraft联机服务器教程" /&gt;&lt;h2 id=&#34;创建一个单独的用户运行mcsmanager非必需&#34;&gt;创建一个单独的用户运行MCSManager（非必需）
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;对于一般的服务器，只运行单个应用，因此在非root用户下直接构建应用并运行即可。但对于博主的服务器，同时运行多个应用，因此每个用户分别管理与控制一个应用有利于管理权限等方面内容。&lt;strong&gt;需要注意的是：如果之后不考虑权限管理，可以跳过该步骤&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;远程ssh连接服务器&#34;&gt;远程ssh连接服务器。
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;此类教程有许多，这里随便列几个链接，就不过多赘述了。
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Escorts/article/details/119180620&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;通过SSH连接到Linux服务器&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_72910567/article/details/132418542&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 系统下：SSH 远程连接 Linux 服务器的完整指南&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;创建用户并修改用户密码&#34;&gt;创建用户并修改用户密码
+&lt;/h3&gt;&lt;p&gt;这个步骤需要保证当前用户拥有管理权限或拥有sudo权限。
+若当前用户不为&lt;em&gt;root&lt;/em&gt;尝试以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建用户&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo useradd -m -s &lt;span class=&#34;s2&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt; mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 修改用户密码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo passwd mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若上述命令执行后弹出“xxx is not in the sudoers file.”其中xxx为当前用户名，这表明当前用户没sudo权限，请参考&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/huangjiabobk/p/18098101&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;在Linux中，如何添加和管理用户账户以及如何设置sudo权限？&lt;/a&gt;或&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/m0_51764535/article/details/114701598&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;linux中创建用户并赋予用户sudo权限&lt;/a&gt;给当前用户赋予sudo权限后重新进行上述操作，或使用如下命令切换至root用户后执行后续命令。&lt;strong&gt;需要注意的是：切换用户时会要求输入密码，linux输入密码类操作时不会显示密码，并不是你没有输入&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 切换至root用户&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su root
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若当前用户为&lt;em&gt;root&lt;/em&gt;尝试以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建用户&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;useradd -m -s &lt;span class=&#34;s2&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt; mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 修改用户密码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;passwd mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装mcsmanager&#34;&gt;安装MCSManager
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;这里可以使用MCSManager官方提供的Linux一键安装脚本（本教程不推荐）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 获取一键安装脚本并执行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo su -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;wget -qO- https://script.mcsmanager.com/setup_cn.sh | bash&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;推荐使用如下方法安装（即 Linux 手动安装）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装nodejs&#34;&gt;安装nodejs
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 回到当前用户的家目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建PATH目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建nodejs存储目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir env
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 移动到nodejs存储目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; env
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下载运行时环境（Node.js）。如果你已经安装了Node.js 16+，请忽略此步骤。（如果下述指令执行失败，请在网上自行百度“linux 安装wget”）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://nodejs.org/dist/v20.16.0/node-v20.16.0-linux-x64.tar.xz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 解压档案&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -xvf node-v20.16.0-linux-x64.tar.xz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 添加程序到系统环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ln -s /home/mcsmanager/env/node-v20.16.0-linux-x64/bin/node bin/node
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ln -s /home/mcsmanager/env/node-v20.16.0-linux-x64/bin/npm bin/npm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意：这里需要断开ssh连接，重新连接&lt;/strong&gt;
+再次连接上ssh后执行以下命令检验是否安装正确&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看nodejs版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看npm包管理器版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行上述指令后返回诸如以下结果即表明正确安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mcsmanager@Server:~$ node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;v20.16.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mcsmanager@Server:~$ npm -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;10.8.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;安装docker&#34;&gt;安装docker
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;此步骤也非必须内容，但为了更好的隔离各个我的时间服务器环境，推荐安装docker。此处安装请参考以下博客&lt;strong&gt;注意：该过程中指令请全程使用root用户操作&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;对于yum包管理的linux：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43755251/article/details/127512751&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linux安装最新版Docker完整教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;对于apt包管理的linux：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_44355653/article/details/140267707&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ubuntu 22.04安装Docker(最全教程，无需科学上网)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;**如何区分是yum包管理的linux还是apt包管理的linux？**如何输入以下指令能返回如下所示结果即为apt包管理的linux，否则大概率是yum包管理的linux。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;root@Server:~$ apt --version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt 2.6.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;amd64&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装成功后执行以下命令把用户添加到docker组中&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 将用户添加到sudo组&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usermod -aG docker mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意：这里需要断开ssh连接，重新连接用户为mcsmanager&lt;/strong&gt;
+再次连接上ssh后执行以下命令检验是否安装正确&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mcsmanager@Server:~$ docker --version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Docker version 20.10.24+dfsg1, build 297e128
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;下载mcsmanager&#34;&gt;下载MCSManager
+&lt;/h3&gt;&lt;p&gt;使用mcsmanager用户执行下述指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 返回家目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 准备好安装目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir mcsmanager/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; mcsmanager/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下载MCSManager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/MCSManager/MCSManager/releases/latest/download/mcsmanager_linux_release.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -zxf mcsmanager_linux_release.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里下载是用github源下载的，可能会下载缓慢，或下载失败。如果下载失败可从如下a、b两种方式中任选一种操作&lt;/p&gt;
+&lt;p&gt;a. 使用gitee源下载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下载MCSManager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://gitee.com/mcsmanager/MCSManager/releases/download/v10.1.0/MCSManager-v10-linux-x64.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -zxf MCSManager-v10-linux-x64.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;b. 本地电脑下载使用scp上传到服务器
+访问&lt;a class=&#34;link&#34; href=&#34;https://github.com/MCSManager/MCSManager/releases/latest/download/mcsmanager_linux_release.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/MCSManager/MCSManager/releases/latest/download/mcsmanager_linux_release.tar.gz&lt;/a&gt;。下载成功后参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/netlai/article/details/79756260&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SCP：将本地文件上传到Linux服务器&lt;/a&gt;或&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/fuhanghang/article/details/134665553&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;通过 SSH 在远程和本地系统之间传输文件的 4 种方法&lt;/a&gt;将文件上传至“/home/mcsmanager/mcsmanager”目录下。之后连接服务器输入以下指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/mcsmanager/mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -zxf mcsmanager_linux_release.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;安装nodejs相关依赖&#34;&gt;安装nodejs相关依赖
+&lt;/h3&gt;&lt;p&gt;执行以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 进入安装目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/mcsmanager/mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装依赖库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果出现以下响应&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-bash: ./install.sh: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;请从a、b、c三种途径中任选一种&lt;/p&gt;
+&lt;p&gt;a. 自己在当前目录（/home/mcsmanager/mcsmanager）中创建一个文件，内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; web
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install --production
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ../daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install --production
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Dependencies are installed!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;b. 执行如下指令下载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Minecraft_Server/install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;c. 自行下载install.sh利用scp上传到“/home/mcsmanager/mcsmanager”目录下&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/mokuaisp/LFS-provider/blob/main/blog/shenghongzha/Minecraft_Server/install.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载链接&lt;/a&gt;
+上传教程见安装2.3.b分享的博客&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意以上三种方式补全install.sh后请执行以下命令&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;之后继续尝试安装依赖，若长时间转圈并未有响应，请参考博客&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_43940789/article/details/131449710&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;国内npm源镜像（npm加速下载） 指定npm镜像&lt;/a&gt;对npm换源后重新尝试下载&lt;/p&gt;
+&lt;h3 id=&#34;注册到-linux-系统服务&#34;&gt;注册到 Linux 系统服务
+&lt;/h3&gt;&lt;p&gt;切换至&lt;em&gt;root&lt;/em&gt;用户&lt;/p&gt;
+&lt;p&gt;在“/etc/systemd/system/”目录下创建mcsm-daemon.service文件（创建方法参考2.4a、b、c，将连接替换成&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Minecraft_Server/mcsm-daemon.service&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mcsm-daemon.service下载链接&lt;/a&gt;），内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Unit&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;MCSManager Daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WorkingDirectory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/mcsmanager/mcsmanager/daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/mcsmanager/bin/node app.js
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecReload&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/bin/kill -s HUP &lt;span class=&#34;nv&#34;&gt;$MAINPID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/bin/kill -s QUIT &lt;span class=&#34;nv&#34;&gt;$MAINPID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Environment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;PATH=/home/mcsmanager/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在“/etc/systemd/system/”目录下创建mcsm-web.service文件（创建方法参考2.4a、b、c，将连接替换成&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Minecraft_Server/mcsm-web.service&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mcsm-web.service下载链接&lt;/a&gt;），内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Unit&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;MCSManager Web
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mcsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WorkingDirectory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/mcsmanager/mcsmanager/web
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/mcsmanager/bin/node app.js
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecReload&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/bin/kill -s HUP &lt;span class=&#34;nv&#34;&gt;$MAINPID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/bin/kill -s QUIT &lt;span class=&#34;nv&#34;&gt;$MAINPID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Environment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;PATH=/home/mcsmanager/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;启动mcsmanager&#34;&gt;启动MCSManager
+&lt;/h3&gt;&lt;p&gt;在&lt;em&gt;root&lt;/em&gt;用户下执行以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start mcsm-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start mcsm-web.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; mcsm-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; mcsm-web.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;检验启动结果，输入以下指令返回类似结果即算成功&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status mcsm-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● mcsm-daemon.service - MCSManager Daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/etc/systemd/system/mcsm-daemon.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; preset: enabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Sun 2024-08-11 16:17:20 CST&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 35s ago
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Main PID: &lt;span class=&#34;m&#34;&gt;245529&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      Tasks: &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;limit: 2025&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Memory: 30.4M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        CPU: 533ms
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     CGroup: /system.slice/mcsm-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─245529 /home/mcsmanager/bin/node app.js
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:17:20 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245529&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:17:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 所有应用实例已加载，总计 &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 个
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:17:20 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245529&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:17:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; ----------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:17:20 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245529&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:17:20&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 守护进程现已成功启动
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; systemctl status mcsm-web.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● mcsm-web.service - MCSManager Web
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/etc/systemd/system/mcsm-web.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; preset: enabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Sun 2024-08-11 16:04:56 CST&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 17min ago
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Main PID: &lt;span class=&#34;m&#34;&gt;245187&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;node&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      Tasks: &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;limit: 2025&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Memory: 45.8M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        CPU: 2.777s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     CGroup: /system.slice/mcsm-web.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─245187 /home/mcsmanager/bin/node app.js
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:04:57 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245187&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:04:57&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 本地用户数：1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:04:57 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245187&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:04:57&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 正在尝试连接远程节点:&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;xxx&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:04:57 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245187&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:04:57&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 远程节点数：1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:04:57 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245187&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:04:57&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aug &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; 16:04:57 iZ2vcimj6d96eq555um1leZ node&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;245187&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;08/11 16:04:57&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INFO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 控制面板端已启动
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>各怀鬼胎</title>
-        <link>http://localhost:2944/post/electronic-design-competition/</link>
+        <link>http://localhost:7447/post/electronic-design-competition/</link>
         <pubDate>Fri, 09 Aug 2024 13:31:08 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/electronic-design-competition/</guid>
-        <description>&lt;img src="http://localhost:2944/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
+        <guid>http://localhost:7447/post/electronic-design-competition/</guid>
+        <description>&lt;img src="http://localhost:7447/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/C%E9%A2%98_%E6%97%A0%E7%BA%BF%E4%BC%A0%E8%BE%93%E4%BF%A1%E5%8F%B7%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目下载&lt;/a&gt; &lt;br&gt;
@@ -36,10 +518,10 @@
 &lt;li&gt;题目要求$W_c$信号的频率$f_c$与有效值$EV_c$可调，对于$W_m$信号其幅度可调。对于无线传输信号而言要求其调制可调，对于$S_M$与$S_D$关系式中的$\alpha$、$\tau$、$\varphi$可调&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;系统架构框图展示&#34;&gt;系统架构框图展示
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure.png&#34;
 	width=&#34;925&#34;
 	height=&#34;346&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;框图展示&#34;
@@ -64,10 +546,10 @@
 &lt;p&gt;第一题第一问要求相对简单，要求我们产生的无线传输信号为CW信号或AM信号即可。需要注意的是&lt;strong&gt;此处所说的是无线传输信号&lt;/strong&gt;，无论是直达信号还是多径信号都是无线传输信号。而且要求为CW或AM信号，即既需要做到无线传输信号为CW信号，又需要无线传输信号为AM信号。这里我们需要$\textcolor{red}{无线传输信号可进行切换，自由选择输出AM信号还是CW信号}$&lt;/p&gt;
 &lt;p&gt;研究AM信号的产生原理见&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考资料1&lt;/a&gt;
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal.png&#34;
 	width=&#34;1012&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;产生AM&#34;
@@ -92,10 +574,10 @@
 &lt;li&gt;模拟产生的多径传输信号 SM，其幅度衰减和时延可设置。相对直达信号，多径信号的时延范围为 50 ~ 200 ns ，以 30ns 的步距步进可调，要求时延误差不大于 10ns；幅度的衰减范围为 0 ~ 20 dB ，以 2 dB 的步进可调，要求衰减误差不大于 1dB。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;本题需要接触$S_M$与$S_D$之间的关系式$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$，我们的理解是
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM.png&#34;
 	width=&#34;882&#34;
 	height=&#34;835&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SD2SM&#34;
@@ -152,11 +634,11 @@
         </item>
         <item>
         <title>努力一定有结果吗？</title>
-        <link>http://localhost:2944/post/hard-work-leads-to-success/</link>
+        <link>http://localhost:7447/post/hard-work-leads-to-success/</link>
         <pubDate>Sun, 05 May 2024 21:06:45 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/hard-work-leads-to-success/</guid>
-        <description>&lt;img src="http://localhost:2944/post/hard-work-leads-to-success/the-harder-the-luck.png" alt="Featured image of post 努力一定有结果吗？" /&gt;&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;
+        <guid>http://localhost:7447/post/hard-work-leads-to-success/</guid>
+        <description>&lt;img src="http://localhost:7447/post/hard-work-leads-to-success/the-harder-the-luck.png" alt="Featured image of post 努力一定有结果吗？" /&gt;&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;
 &lt;p&gt;说来也奇怪，学校的许多比赛的校赛总喜欢在五一举行，或许五一大家都有时间，而且时间足够长？今年五一不出意外，我参加了电赛校赛（又没有出去玩😭），这篇文章算是对我五一假期参赛过程的一个记录，也是对失败的一种反思吧，同时总结一下我从上大学开始到现在参加许多比赛的所见所闻所感。&lt;/p&gt;
 &lt;p&gt;无论是什么校赛，在五一期间举办总有一个特点，赛程总是比正式比赛（省赛或国赛）长不少，这样也挺好，兼顾了更多的学生，同时也避免了像正式比赛那样的高强度，熬夜伤身体。&lt;/p&gt;
 &lt;h2 id=&#34;回顾电赛校赛&#34;&gt;回顾电赛校赛
@@ -169,10 +651,10 @@
 &lt;p&gt;就这样在最后时间，我们开始马马虎虎的赶，要修改方波发生电路，要做加法电路、直流偏置、分压电路。这样看来我们好像什么都没做，所以我在那天开始就开始吐槽，我们好像什么都没做。买的模块只到了移相器，半天也测不明白。5月3日，晚上我紧赶慢赶终于把俩个加法器电路制作完成。我的那个队友也成功把方波发生电路修缮完成。这样看来一切好似都在向好的方向发展。但世事难料，一分耕耘一分收获。我们的大意致使我们的失败已成一种不可避免的事实。&lt;/p&gt;
 &lt;p&gt;第二天，也是交题前的最后一天，中午工作前滤波模块到达，开始调试。调试好，方波电路又出问题，产生方波的频率变成了3k！！，这时我室友也来找我求程序，我已经有点想要放了的节奏，便帮我室友移植我的代码到他的板子上，我开发STM32使用的稚晖君“&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/145801160&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;配置CLion用于STM32开发【优雅の嵌入式开发】&lt;/a&gt;”的这套方案，有时使用PlatformIO进行开发，我的室友使用Keil，同时我会使用git管理代码，我并不想将git的所有分支全部拷贝到室友电脑上，于是我便单独将源码拷出来，重新配置工程，其中也遇到一些困难，同时也去我室友的实验室参观了一下，他的作品如下图。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;1920&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;室友作品&#34;
@@ -184,10 +666,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;参观了他的实验室，听了他的讲解，我其实有点退缩了。我在想到底要不要实物评测（我们的实物感觉十分恶心）。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/give-up-show.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/give-up-show.jpg&#34;
 	width=&#34;951&#34;
 	height=&#34;1807&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;放弃实物展示&#34;
@@ -217,10 +699,10 @@
 &lt;p&gt;我没有怎么认真学习过？我好像否定了自己的努力，我有认真学习过。我从小到大都在认真学习！小时候我很好学，我至今仍记得俩件事，我小学的时候，总喜欢找数学老师去问题，刚开始是去问问题，但后来，我总觉得觉得自己很厉害，便开始研究怎么把老师难住（那个时候网络还不发达，没有什么拍照搜题之类的工具），现在或许回头看问的问题或许很幼稚，但真是当初那位数学老师&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;不断的解答，我不断出题，锻炼我在该方面思维。另一件事是我小学有一段时间沉迷于研究找规律，当初学了能除以3的数所有位数相加都是3的倍数，我便在想别的数呢，如何快速判断一个数能否被别的数整除，比如7或4。我沉迷于找到一个简单的数学形式判断这个问题，我还沉迷于找一个图形中最多有多少个三角形之类的问题，这个问题记得形象极其深刻，我小学放学过马路时曾被轿车撞后便沉迷这个问题，在等交警的时候便在研究这个问题（不能让脑子闲下来，浪费时间）。&lt;/p&gt;
 &lt;p&gt;我觉得真是因为小学的这种锻炼，让我对这个方面上手速度加快，从而造成我看似很聪明的现象。我将1+1掌握的极其牢固，之后9*9就会很简单，别人1+1还不怎么懂，9*9当然很难学会,不是说学不会，是很难。当然举例或许夸张，但我认为这一观点可以在自己遇到挫折分析原因时作参考。&lt;code&gt;现在失败可能是在还过去的债&lt;/code&gt;。基于这个观点，分析我六级为何没过，因为我英语欠的债太多太多。我是仅在刚学英语时有认真付出，但仅仅局限于“What&amp;rsquo;s your name?”，之后便是初二末期，为了中考不得不学习英语，但接触便是应试教育的那一套——如何在你不会做的情况下，把题作对。这短期来看收益最大，但却造成了我长期以来英语漏洞的越来越大。或许英语的问题便在六级处显现了，还是那位600+的同学，他说他英语完全在吃老本，高中到现在都没学过英语，不过他小时候，每天早上听英语音频跟读。他好像和我一样都在“吃老本”。这便是我最开始说的“努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;
 &lt;p&gt;这件事也让我想起一件事，我在上个学期曾跟着中长跑田径队训练了一段时间，寒假期间到这个学习一直没有怎么练，最近闲下来才有时间捡起来恢复一下，我有明显的感觉，我即使有一段时间没有认真练过，但我的实力也相比于大一刚开学强不少。前几天2024年美国大学生数学建模大赛成绩出了，我们队H奖，但实话实说，我感觉我什么都没做，我买了北海的课程，但从没看过。参加了大学生数学建模竞赛，感觉啥都没做，就是一个省一。所以，我给予评价：数模很水。事实好像并不是这样的，我们学校照样有一堆S（successful Participant）奖，甚至还有U（unsuccessful Participant）奖。当然M奖与F奖也有不少。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/running.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/running.jpg&#34;
 	width=&#34;1170&#34;
 	height=&#34;6436&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;跑步截图&#34;
@@ -251,11 +733,11 @@
         </item>
         <item>
         <title>优雅的博客界面</title>
-        <link>http://localhost:2944/post/blog-config/</link>
+        <link>http://localhost:7447/post/blog-config/</link>
         <pubDate>Wed, 01 May 2024 21:08:43 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/blog-config/</guid>
-        <description>&lt;img src="http://localhost:2944/post/blog-config/hugo-stack.png" alt="Featured image of post 优雅的博客界面" /&gt;&lt;blockquote&gt;
+        <guid>http://localhost:7447/post/blog-config/</guid>
+        <description>&lt;img src="http://localhost:7447/post/blog-config/hugo-stack.png" alt="Featured image of post 优雅的博客界面" /&gt;&lt;blockquote&gt;
 &lt;p&gt;上期&lt;a class=&#34;link&#34; href=&#34;https://blog.mokuai.space/post/blog-build/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;用hugo搭建一个属于自己的博客&lt;/a&gt;搭建了一个博客，本期博客从三个方面详细讲解配置一个“优雅”的博客&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -628,11 +1110,11 @@
         </item>
         <item>
         <title>吐槽一下科研工程与实践（不止）</title>
-        <link>http://localhost:2944/post/roast-research-engineering-and-practice/</link>
+        <link>http://localhost:7447/post/roast-research-engineering-and-practice/</link>
         <pubDate>Sat, 20 Apr 2024 10:00:26 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/roast-research-engineering-and-practice/</guid>
-        <description>&lt;img src="http://localhost:2944/post/roast-research-engineering-and-practice/roast-research-engineering-and-practice.png" alt="Featured image of post 吐槽一下科研工程与实践（不止）" /&gt;&lt;ul&gt;
+        <guid>http://localhost:7447/post/roast-research-engineering-and-practice/</guid>
+        <description>&lt;img src="http://localhost:7447/post/roast-research-engineering-and-practice/roast-research-engineering-and-practice.png" alt="Featured image of post 吐槽一下科研工程与实践（不止）" /&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;以下所有内容均为本人狭义观点，带有强烈情绪，请理性看待，如有错误请联系我纠正或删除&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -642,10 +1124,10 @@
 &lt;/h2&gt;&lt;p&gt;关于这门课，主要是因为培养方案改变而孕育而生的的。西电有一个传统（应该是传统吧），大一入学后，会有一个新生入学考试，考试科目是三门：数学、英语、物理。然后可以选择提前大类分流（正常是大一结束进行分流，根据大一考试综测进行填报志愿分流），进入细分专业的教改班或卓越班或其他特殊班（一般的学院都是这俩个班，空间学院好像只有一个特殊班——钱学森班），我们那一届的通知是:&lt;a class=&#34;link&#34; href=&#34;https://jwc.xidian.edu.cn/info/1012/12185.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;关于2022级学生实验班选拔的通知&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;我呢，算的上幸运，或者也能说不幸运。22年入学，刚好赶上西安新冠疫情，然后被迫推迟开学，同样的开学考试也推迟了。西安疫情结束了，我们那有疫情了，因此来学校就只能隔离了，我记得当初来学校要在西南角的彩钢瓦房隔离一周，值得一提的是，在校内隔离永远是俩人一间（我之后还隔离了一次，大一下阳了），隔离完已经将近国庆假期了，好像只差几天。好了，回归正题，入学考试时，我刚好在隔离，便申请线上考试，我的临时室友是大三的，他已经经历过许多次线上考试。我的临时室友便给我传授线上考试经验，如何在“上有对策下”生存
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/first-exam.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/first-exam.jpg&#34;
 	width=&#34;1170&#34;
 	height=&#34;765&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/roast-research-engineering-and-practice/first-exam_hu440edffc0064729cdabf1dd2850afd49_256506_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;新生入学能力测试&#34;
@@ -657,10 +1139,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;具体的监考政策如下图所示，我的临时是由告诉我，可以通过电脑腾讯会议去拍摄全身，用另一台电脑接受试卷，自己的手机登录同一账号，再接受一份试卷，电脑进入腾讯会议可以手动关闭麦克风权限，但在其他人看来，你是开着的，他为此还专门给我演示了一下。考试时，用他电脑对我进行会议录像，然后他用我手机接受试卷，并且用他自己手机进行拍照搜题，而我用自己电脑正常接受试卷，并做题。如果有不会的，直接问他就行，因为会议录不到声音，此方案完全安全。
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/web-exam.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/web-exam.png&#34;
 	width=&#34;2142&#34;
 	height=&#34;973&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/web-exam_hude90f08c01c50b833c68936e9f161815_552050_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;线上考试注意事项&#34;
@@ -671,10 +1153,10 @@
 		data-flex-basis=&#34;528px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/slot-requirement.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/slot-requirement.png&#34;
 	width=&#34;1129&#34;
 	height=&#34;973&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/slot-requirement_hu397af0c035f56d46d484a3587191612e_559953_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;机位要求&#34;
@@ -688,10 +1170,10 @@
 &lt;p&gt;虽然有了这个“鼎力相助”的室友，但是其实我本没有怎么作弊，他每次问我，第x题需要不要，我的回答就是不需要，毕竟刚上大学，还是胆怯，即使在正式考试前，我俩已经试过，但我还是没有不放心，害怕作弊被抓，所以，即使有一套标准的作案流程。我还是诚信考试。&lt;/p&gt;
 &lt;p&gt;不过也是运气使然，即使自己当初基本已经忘得差不多，但还是凭借运气，考了不错的成绩（或许吧），在来西电前，便听说西电&lt;a class=&#34;link&#34; href=&#34;https://www.cdgdc.edu.cn/dslxkpgjggb/index.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第四次学科评估&lt;/a&gt;中，“电子科学与技术”评得A+，全国第一，那时可谓心驰神往。直冲“电子科学与技术”专业教改班。过了一段时间，便通知我面试，我记得当初要面试名单就30多人，我还在担心能不能面试通过。结果吧，其实面试就没什么压力，基本是去面试就通过，23人组成了最开始的电子科学与技术教改班。
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/el-first.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/el-first.png&#34;
 	width=&#34;1467&#34;
 	height=&#34;985&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/el-first_hue155d683b53e57e2caf51945ef9c2b8f_412491_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;第四次学科评估——电子科学与技术&#34;
@@ -716,10 +1198,10 @@
 &lt;li&gt;重创新&lt;/li&gt;
 &lt;li&gt;宽视野
 具体内容如下图所示：
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/three-point-demand.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/three-point-demand.png&#34;
 	width=&#34;519&#34;
 	height=&#34;783&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/three-point-demand_hua3f1d6fd1824cb39d92b304c97f58c6a_88361_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;三点内容&#34;
@@ -732,10 +1214,10 @@
 &gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;关于第二点重创新而言，下文中又提及双导师制
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/double-tutor.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/double-tutor.png&#34;
 	width=&#34;499&#34;
 	height=&#34;399&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/double-tutor_hua69cea5de4f5bd4340744e902b559ef8_40907_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;双导师制&#34;
@@ -755,10 +1237,10 @@
 &lt;p&gt;我所选的导师是计算成像课题组的，他便给我们给安排第一次上课，先带我们简单了解一下什么是计算成像。但一道砍后有另一道坎，我们根本无法理解任何有关“计算成像”的专业知识，只能像科普一样知道什么计算成像可以向仿生角度上创新之类话，比如：什么动物眼睛可以看到墙的另一边；什么动物眼睛有一圈等。老师其实也很无奈，我们基础知识欠的或许有点多，任何光学的课程都未曾开设（直接有关光学的课程得等到大三开开设），需要注意的是，我们当初还在上大学物理。&lt;/p&gt;
 &lt;p&gt;或许我们太忙，也或许我们没有任何基础，导师难以雕刻我们这些石头。也或许我没有提前了解导师的性格，只关注了自己的兴趣点，选到了“散养性”导师。期中答辩前，我们仅与导师见了那仅有的一面。期中答辩来的很快。&lt;/p&gt;
 &lt;p&gt;考试前还是刚考完期中，负责人便在群里通知我们期中答辩，要求我们完成论文（其实形式也不一定要求是论文）与ppt进行提交。
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/mid-term-oral-examination.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/mid-term-oral-examination.png&#34;
 	width=&#34;1131&#34;
 	height=&#34;498&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_480x0_resize_box_3.png 480w, http://localhost:2944/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_480x0_resize_box_3.png 480w, http://localhost:7447/post/roast-research-engineering-and-practice/mid-term-oral-examination_hufa48a5029e38e9525c15f131b630a882_141783_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;中期答辩&#34;
@@ -791,10 +1273,10 @@
 &lt;p&gt;我认为，只有抽出一定的空闲时间，让学生自由支配，学生才有机会有可能学习科技前沿，实践科技前沿，同样地，抽出时间交给学生自己必然导致着，学生可能加大娱乐化时间等等。我知道，大概率有人用“时间就像海绵里的水，只要你挤，总是有的”。这个我是难以反驳的，毕竟前面我说过“抱怨实质上就是因为事物并未符合自己所构想的方向发展罢了”，我这其实也还是抱怨罢了。不过，我认为，我是一名较理智的抱怨者，我站在我的角度上提出了建设性意见。事物的发展好像就是“抱怨，解决，再抱怨，再解决，循环往复”的过程。&lt;/p&gt;
 &lt;h2 id=&#34;写在最后&#34;&gt;写在最后
 &lt;/h2&gt;&lt;p&gt;对了，今天答辩结束，负责人发了一张表（如下图）。这一刻，我好像发现了一个循环，好像找到了教育滞后性。
-&lt;img src=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/research-chat.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/research-chat.jpg&#34;
 	width=&#34;1280&#34;
 	height=&#34;1742&#34;
-	srcset=&#34;http://localhost:2944/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/roast-research-engineering-and-practice/research-chat_huc73af1a01d38386b9228324d3c2a8c0a_163262_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2022级光电工程学院教改班课程设置调查表&#34;
@@ -810,11 +1292,11 @@
         </item>
         <item>
         <title>用hugo搭建一个属于自己的博客</title>
-        <link>http://localhost:2944/post/blog-build/</link>
+        <link>http://localhost:7447/post/blog-build/</link>
         <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/blog-build/</guid>
-        <description>&lt;img src="http://localhost:2944/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
+        <guid>http://localhost:7447/post/blog-build/</guid>
+        <description>&lt;img src="http://localhost:7447/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
 &lt;p&gt;最近学习的许多东西，有温习以前学的知识，也有学的许多知识。学新的东西踩坑是无法避免的，这时就只能去网上搜索。但总有一些问题是别人从未遇到的，又不敢去stackflow提问（其实主要是英语有点差），这时就只能自己去琢磨，研究。自己这次跑通流程，但下次却又未必。于是便有用博客记录一下的想法，希望自己下次不会踩同样的坑，也希望别人下次遇到同样的问题时，能在我的博客的帮助下快速解决。所以这篇文章将主要记录我搭建这个博客从头到尾的一个过程以及中间遇到的问题与解决方案，希望对你有用。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;搭建博客系统&#34;&gt;搭建博客系统
@@ -846,10 +1328,10 @@
 &lt;/ol&gt;
 &lt;h4 id=&#34;安装hugo&#34;&gt;安装Hugo
 &lt;/h4&gt;&lt;p&gt;官网在安装教程中有提到先决条件，如下图所示
-&lt;img src=&#34;http://localhost:2944/post/blog-build/prerequisites.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/prerequisites.png&#34;
 	width=&#34;1257&#34;
 	height=&#34;1099&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;先决条件&#34;
@@ -866,10 +1348,10 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github&lt;/a&gt;直接下载自己系统对应的Releases的压缩包就行。Windows系统就下载下图红框的任意一个即可，推荐下载extended版。standard and extended的区别详见官网：&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/#editions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;standard and extended的区别&lt;/a&gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/download-zip.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/download-zip.png&#34;
 	width=&#34;2479&#34;
 	height=&#34;1206&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;下载压缩包&#34;
@@ -883,10 +1365,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;解压压缩包到任意位置
-&lt;img src=&#34;http://localhost:2944/post/blog-build/unzip.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/unzip.png&#34;
 	width=&#34;1296&#34;
 	height=&#34;595&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;解压压缩包&#34;
@@ -900,10 +1382,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;添加环境变量，打开设置-系统性息（可右击“此电脑”，选择属性；或右击底下的windows图标选择系统），依次点击“高级系统设置”，“环境变量”。双击打开“Path”，新增一条，位置选择自己保存Hugo的目录。
-&lt;img src=&#34;http://localhost:2944/post/blog-build/set-env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/set-env.png&#34;
 	width=&#34;2478&#34;
 	height=&#34;928&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 1&#34;
@@ -914,10 +1396,10 @@
 		data-flex-basis=&#34;640px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/env.png&#34;
 	width=&#34;616&#34;
 	height=&#34;624&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 2&#34;
@@ -932,10 +1414,10 @@
 &lt;li&gt;
 &lt;p&gt;检验是否配置环境变量成功，在任意一个目录下，右击, 选择“在终端中打开”,输入
 &lt;code&gt;hugo version&lt;/code&gt;,换回类似于如下结果即代表配置成功
-&lt;img src=&#34;http://localhost:2944/post/blog-build/check-env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/check-env.png&#34;
 	width=&#34;1294&#34;
 	height=&#34;735&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;检验环境变量&#34;
@@ -946,10 +1428,10 @@
 		data-flex-basis=&#34;422px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/check-env-ok.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/check-env-ok.png&#34;
 	width=&#34;1858&#34;
 	height=&#34;373&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;配置环境变量成功&#34;

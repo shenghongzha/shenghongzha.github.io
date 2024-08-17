@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>竞赛 on SanmuDang的博客</title>
-        <link>http://localhost:2944/tags/%E7%AB%9E%E8%B5%9B/</link>
+        <link>http://localhost:7447/tags/%E7%AB%9E%E8%B5%9B/</link>
         <description>Recent content in 竞赛 on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Fri, 09 Aug 2024 13:31:08 +0800</lastBuildDate><atom:link href="http://localhost:2944/tags/%E7%AB%9E%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 Aug 2024 13:31:08 +0800</lastBuildDate><atom:link href="http://localhost:7447/tags/%E7%AB%9E%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>各怀鬼胎</title>
-        <link>http://localhost:2944/post/electronic-design-competition/</link>
+        <link>http://localhost:7447/post/electronic-design-competition/</link>
         <pubDate>Fri, 09 Aug 2024 13:31:08 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/electronic-design-competition/</guid>
-        <description>&lt;img src="http://localhost:2944/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
+        <guid>http://localhost:7447/post/electronic-design-competition/</guid>
+        <description>&lt;img src="http://localhost:7447/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/C%E9%A2%98_%E6%97%A0%E7%BA%BF%E4%BC%A0%E8%BE%93%E4%BF%A1%E5%8F%B7%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目下载&lt;/a&gt; &lt;br&gt;
@@ -36,10 +36,10 @@
 &lt;li&gt;题目要求$W_c$信号的频率$f_c$与有效值$EV_c$可调，对于$W_m$信号其幅度可调。对于无线传输信号而言要求其调制可调，对于$S_M$与$S_D$关系式中的$\alpha$、$\tau$、$\varphi$可调&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;系统架构框图展示&#34;&gt;系统架构框图展示
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure.png&#34;
 	width=&#34;925&#34;
 	height=&#34;346&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;框图展示&#34;
@@ -64,10 +64,10 @@
 &lt;p&gt;第一题第一问要求相对简单，要求我们产生的无线传输信号为CW信号或AM信号即可。需要注意的是&lt;strong&gt;此处所说的是无线传输信号&lt;/strong&gt;，无论是直达信号还是多径信号都是无线传输信号。而且要求为CW或AM信号，即既需要做到无线传输信号为CW信号，又需要无线传输信号为AM信号。这里我们需要$\textcolor{red}{无线传输信号可进行切换，自由选择输出AM信号还是CW信号}$&lt;/p&gt;
 &lt;p&gt;研究AM信号的产生原理见&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考资料1&lt;/a&gt;
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal.png&#34;
 	width=&#34;1012&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;产生AM&#34;
@@ -92,10 +92,10 @@
 &lt;li&gt;模拟产生的多径传输信号 SM，其幅度衰减和时延可设置。相对直达信号，多径信号的时延范围为 50 ~ 200 ns ，以 30ns 的步距步进可调，要求时延误差不大于 10ns；幅度的衰减范围为 0 ~ 20 dB ，以 2 dB 的步进可调，要求衰减误差不大于 1dB。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;本题需要接触$S_M$与$S_D$之间的关系式$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$，我们的理解是
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM.png&#34;
 	width=&#34;882&#34;
 	height=&#34;835&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SD2SM&#34;
@@ -152,11 +152,11 @@
         </item>
         <item>
         <title>努力一定有结果吗？</title>
-        <link>http://localhost:2944/post/hard-work-leads-to-success/</link>
+        <link>http://localhost:7447/post/hard-work-leads-to-success/</link>
         <pubDate>Sun, 05 May 2024 21:06:45 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/hard-work-leads-to-success/</guid>
-        <description>&lt;img src="http://localhost:2944/post/hard-work-leads-to-success/the-harder-the-luck.png" alt="Featured image of post 努力一定有结果吗？" /&gt;&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;
+        <guid>http://localhost:7447/post/hard-work-leads-to-success/</guid>
+        <description>&lt;img src="http://localhost:7447/post/hard-work-leads-to-success/the-harder-the-luck.png" alt="Featured image of post 努力一定有结果吗？" /&gt;&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;
 &lt;p&gt;说来也奇怪，学校的许多比赛的校赛总喜欢在五一举行，或许五一大家都有时间，而且时间足够长？今年五一不出意外，我参加了电赛校赛（又没有出去玩😭），这篇文章算是对我五一假期参赛过程的一个记录，也是对失败的一种反思吧，同时总结一下我从上大学开始到现在参加许多比赛的所见所闻所感。&lt;/p&gt;
 &lt;p&gt;无论是什么校赛，在五一期间举办总有一个特点，赛程总是比正式比赛（省赛或国赛）长不少，这样也挺好，兼顾了更多的学生，同时也避免了像正式比赛那样的高强度，熬夜伤身体。&lt;/p&gt;
 &lt;h2 id=&#34;回顾电赛校赛&#34;&gt;回顾电赛校赛
@@ -169,10 +169,10 @@
 &lt;p&gt;就这样在最后时间，我们开始马马虎虎的赶，要修改方波发生电路，要做加法电路、直流偏置、分压电路。这样看来我们好像什么都没做，所以我在那天开始就开始吐槽，我们好像什么都没做。买的模块只到了移相器，半天也测不明白。5月3日，晚上我紧赶慢赶终于把俩个加法器电路制作完成。我的那个队友也成功把方波发生电路修缮完成。这样看来一切好似都在向好的方向发展。但世事难料，一分耕耘一分收获。我们的大意致使我们的失败已成一种不可避免的事实。&lt;/p&gt;
 &lt;p&gt;第二天，也是交题前的最后一天，中午工作前滤波模块到达，开始调试。调试好，方波电路又出问题，产生方波的频率变成了3k！！，这时我室友也来找我求程序，我已经有点想要放了的节奏，便帮我室友移植我的代码到他的板子上，我开发STM32使用的稚晖君“&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/145801160&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;配置CLion用于STM32开发【优雅の嵌入式开发】&lt;/a&gt;”的这套方案，有时使用PlatformIO进行开发，我的室友使用Keil，同时我会使用git管理代码，我并不想将git的所有分支全部拷贝到室友电脑上，于是我便单独将源码拷出来，重新配置工程，其中也遇到一些困难，同时也去我室友的实验室参观了一下，他的作品如下图。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;1920&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/edc-school-outstanding_hu7fff69ee2247de4231ecae08e1dc737f_551758_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;室友作品&#34;
@@ -184,10 +184,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;参观了他的实验室，听了他的讲解，我其实有点退缩了。我在想到底要不要实物评测（我们的实物感觉十分恶心）。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/give-up-show.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/give-up-show.jpg&#34;
 	width=&#34;951&#34;
 	height=&#34;1807&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/give-up-show_hu3e2da94e5f04e406052c3988601c87e3_131605_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;放弃实物展示&#34;
@@ -217,10 +217,10 @@
 &lt;p&gt;我没有怎么认真学习过？我好像否定了自己的努力，我有认真学习过。我从小到大都在认真学习！小时候我很好学，我至今仍记得俩件事，我小学的时候，总喜欢找数学老师去问题，刚开始是去问问题，但后来，我总觉得觉得自己很厉害，便开始研究怎么把老师难住（那个时候网络还不发达，没有什么拍照搜题之类的工具），现在或许回头看问的问题或许很幼稚，但真是当初那位数学老师&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;不断的解答，我不断出题，锻炼我在该方面思维。另一件事是我小学有一段时间沉迷于研究找规律，当初学了能除以3的数所有位数相加都是3的倍数，我便在想别的数呢，如何快速判断一个数能否被别的数整除，比如7或4。我沉迷于找到一个简单的数学形式判断这个问题，我还沉迷于找一个图形中最多有多少个三角形之类的问题，这个问题记得形象极其深刻，我小学放学过马路时曾被轿车撞后便沉迷这个问题，在等交警的时候便在研究这个问题（不能让脑子闲下来，浪费时间）。&lt;/p&gt;
 &lt;p&gt;我觉得真是因为小学的这种锻炼，让我对这个方面上手速度加快，从而造成我看似很聪明的现象。我将1+1掌握的极其牢固，之后9*9就会很简单，别人1+1还不怎么懂，9*9当然很难学会,不是说学不会，是很难。当然举例或许夸张，但我认为这一观点可以在自己遇到挫折分析原因时作参考。&lt;code&gt;现在失败可能是在还过去的债&lt;/code&gt;。基于这个观点，分析我六级为何没过，因为我英语欠的债太多太多。我是仅在刚学英语时有认真付出，但仅仅局限于“What&amp;rsquo;s your name?”，之后便是初二末期，为了中考不得不学习英语，但接触便是应试教育的那一套——如何在你不会做的情况下，把题作对。这短期来看收益最大，但却造成了我长期以来英语漏洞的越来越大。或许英语的问题便在六级处显现了，还是那位600+的同学，他说他英语完全在吃老本，高中到现在都没学过英语，不过他小时候，每天早上听英语音频跟读。他好像和我一样都在“吃老本”。这便是我最开始说的“努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;
 &lt;p&gt;这件事也让我想起一件事，我在上个学期曾跟着中长跑田径队训练了一段时间，寒假期间到这个学习一直没有怎么练，最近闲下来才有时间捡起来恢复一下，我有明显的感觉，我即使有一段时间没有认真练过，但我的实力也相比于大一刚开学强不少。前几天2024年美国大学生数学建模大赛成绩出了，我们队H奖，但实话实说，我感觉我什么都没做，我买了北海的课程，但从没看过。参加了大学生数学建模竞赛，感觉啥都没做，就是一个省一。所以，我给予评价：数模很水。事实好像并不是这样的，我们学校照样有一堆S（successful Participant）奖，甚至还有U（unsuccessful Participant）奖。当然M奖与F奖也有不少。
-&lt;img src=&#34;http://localhost:2944/post/hard-work-leads-to-success/running.jpg&#34;
+&lt;img src=&#34;http://localhost:7447/post/hard-work-leads-to-success/running.jpg&#34;
 	width=&#34;1170&#34;
 	height=&#34;6436&#34;
-	srcset=&#34;http://localhost:2944/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_480x0_resize_q75_box.jpg 480w, http://localhost:2944/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_480x0_resize_q75_box.jpg 480w, http://localhost:7447/post/hard-work-leads-to-success/running_hu9e09a1724dec0ec716078c195d1d7a10_702773_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;跑步截图&#34;

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技术 on SanmuDang的博客</title>
-        <link>http://localhost:2944/categories/tech/</link>
+        <link>http://localhost:7447/categories/tech/</link>
         <description>Recent content in 技术 on SanmuDang的博客</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-Hans</language><atom:link href="http://localhost:2944/categories/tech/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-Hans</language><atom:link href="http://localhost:7447/categories/tech/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>各怀鬼胎</title>
-        <link>http://localhost:2944/post/electronic-design-competition/</link>
+        <link>http://localhost:7447/post/electronic-design-competition/</link>
         <pubDate>Fri, 09 Aug 2024 13:31:08 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/electronic-design-competition/</guid>
-        <description>&lt;img src="http://localhost:2944/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
+        <guid>http://localhost:7447/post/electronic-design-competition/</guid>
+        <description>&lt;img src="http://localhost:7447/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/C%E9%A2%98_%E6%97%A0%E7%BA%BF%E4%BC%A0%E8%BE%93%E4%BF%A1%E5%8F%B7%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目下载&lt;/a&gt; &lt;br&gt;
@@ -35,10 +35,10 @@
 &lt;li&gt;题目要求$W_c$信号的频率$f_c$与有效值$EV_c$可调，对于$W_m$信号其幅度可调。对于无线传输信号而言要求其调制可调，对于$S_M$与$S_D$关系式中的$\alpha$、$\tau$、$\varphi$可调&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;系统架构框图展示&#34;&gt;系统架构框图展示
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure.png&#34;
 	width=&#34;925&#34;
 	height=&#34;346&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/2024-C-structure_hu5a743cc8aaeacd7e758a7e4782ecb07c_102998_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;框图展示&#34;
@@ -63,10 +63,10 @@
 &lt;p&gt;第一题第一问要求相对简单，要求我们产生的无线传输信号为CW信号或AM信号即可。需要注意的是&lt;strong&gt;此处所说的是无线传输信号&lt;/strong&gt;，无论是直达信号还是多径信号都是无线传输信号。而且要求为CW或AM信号，即既需要做到无线传输信号为CW信号，又需要无线传输信号为AM信号。这里我们需要$\textcolor{red}{无线传输信号可进行切换，自由选择输出AM信号还是CW信号}$&lt;/p&gt;
 &lt;p&gt;研究AM信号的产生原理见&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考资料1&lt;/a&gt;
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal.png&#34;
 	width=&#34;1012&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/make-AM-signal_hufeddb4cc86431bca8addbeff4aea786d_41091_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;产生AM&#34;
@@ -91,10 +91,10 @@
 &lt;li&gt;模拟产生的多径传输信号 SM，其幅度衰减和时延可设置。相对直达信号，多径信号的时延范围为 50 ~ 200 ns ，以 30ns 的步距步进可调，要求时延误差不大于 10ns；幅度的衰减范围为 0 ~ 20 dB ，以 2 dB 的步进可调，要求衰减误差不大于 1dB。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;本题需要接触$S_M$与$S_D$之间的关系式$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$，我们的理解是
-&lt;img src=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM.png&#34;
 	width=&#34;882&#34;
 	height=&#34;835&#34;
-	srcset=&#34;http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:2944/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_480x0_resize_box_3.png 480w, http://localhost:7447/post/electronic-design-competition/SD2SM_hu4f8b466a9dcc5089176b49130954affe_105596_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SD2SM&#34;
@@ -151,11 +151,11 @@
         </item>
         <item>
         <title>优雅的博客界面</title>
-        <link>http://localhost:2944/post/blog-config/</link>
+        <link>http://localhost:7447/post/blog-config/</link>
         <pubDate>Wed, 01 May 2024 21:08:43 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/blog-config/</guid>
-        <description>&lt;img src="http://localhost:2944/post/blog-config/hugo-stack.png" alt="Featured image of post 优雅的博客界面" /&gt;&lt;blockquote&gt;
+        <guid>http://localhost:7447/post/blog-config/</guid>
+        <description>&lt;img src="http://localhost:7447/post/blog-config/hugo-stack.png" alt="Featured image of post 优雅的博客界面" /&gt;&lt;blockquote&gt;
 &lt;p&gt;上期&lt;a class=&#34;link&#34; href=&#34;https://blog.mokuai.space/post/blog-build/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;用hugo搭建一个属于自己的博客&lt;/a&gt;搭建了一个博客，本期博客从三个方面详细讲解配置一个“优雅”的博客&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -528,11 +528,11 @@
         </item>
         <item>
         <title>用hugo搭建一个属于自己的博客</title>
-        <link>http://localhost:2944/post/blog-build/</link>
+        <link>http://localhost:7447/post/blog-build/</link>
         <pubDate>Thu, 18 Apr 2024 23:13:18 +0800</pubDate>
         
-        <guid>http://localhost:2944/post/blog-build/</guid>
-        <description>&lt;img src="http://localhost:2944/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
+        <guid>http://localhost:7447/post/blog-build/</guid>
+        <description>&lt;img src="http://localhost:7447/post/blog-build/stack-blog-cover.png" alt="Featured image of post 用hugo搭建一个属于自己的博客" /&gt;&lt;blockquote&gt;
 &lt;p&gt;最近学习的许多东西，有温习以前学的知识，也有学的许多知识。学新的东西踩坑是无法避免的，这时就只能去网上搜索。但总有一些问题是别人从未遇到的，又不敢去stackflow提问（其实主要是英语有点差），这时就只能自己去琢磨，研究。自己这次跑通流程，但下次却又未必。于是便有用博客记录一下的想法，希望自己下次不会踩同样的坑，也希望别人下次遇到同样的问题时，能在我的博客的帮助下快速解决。所以这篇文章将主要记录我搭建这个博客从头到尾的一个过程以及中间遇到的问题与解决方案，希望对你有用。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;搭建博客系统&#34;&gt;搭建博客系统
@@ -564,10 +564,10 @@
 &lt;/ol&gt;
 &lt;h4 id=&#34;安装hugo&#34;&gt;安装Hugo
 &lt;/h4&gt;&lt;p&gt;官网在安装教程中有提到先决条件，如下图所示
-&lt;img src=&#34;http://localhost:2944/post/blog-build/prerequisites.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/prerequisites.png&#34;
 	width=&#34;1257&#34;
 	height=&#34;1099&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/prerequisites_hu967037cefc85a264224458ecd58b1c9f_111984_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;先决条件&#34;
@@ -584,10 +584,10 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Github&lt;/a&gt;直接下载自己系统对应的Releases的压缩包就行。Windows系统就下载下图红框的任意一个即可，推荐下载extended版。standard and extended的区别详见官网：&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/windows/#editions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;standard and extended的区别&lt;/a&gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/download-zip.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/download-zip.png&#34;
 	width=&#34;2479&#34;
 	height=&#34;1206&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/download-zip_hu0cb9a30c7bc76797a9fff0c694e1265c_190142_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;下载压缩包&#34;
@@ -601,10 +601,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;解压压缩包到任意位置
-&lt;img src=&#34;http://localhost:2944/post/blog-build/unzip.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/unzip.png&#34;
 	width=&#34;1296&#34;
 	height=&#34;595&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/unzip_hu5ffcc9ca079e573448e2d19134d28e1c_51733_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;解压压缩包&#34;
@@ -618,10 +618,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;添加环境变量，打开设置-系统性息（可右击“此电脑”，选择属性；或右击底下的windows图标选择系统），依次点击“高级系统设置”，“环境变量”。双击打开“Path”，新增一条，位置选择自己保存Hugo的目录。
-&lt;img src=&#34;http://localhost:2944/post/blog-build/set-env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/set-env.png&#34;
 	width=&#34;2478&#34;
 	height=&#34;928&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/set-env_hu68304c0d30bc2e104316ebcce8e269ab_180585_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 1&#34;
@@ -632,10 +632,10 @@
 		data-flex-basis=&#34;640px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/env.png&#34;
 	width=&#34;616&#34;
 	height=&#34;624&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/env_hu3e5f3ac5369853fc336130039b5d25e0_251827_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置环境变量 2&#34;
@@ -650,10 +650,10 @@
 &lt;li&gt;
 &lt;p&gt;检验是否配置环境变量成功，在任意一个目录下，右击, 选择“在终端中打开”,输入
 &lt;code&gt;hugo version&lt;/code&gt;,换回类似于如下结果即代表配置成功
-&lt;img src=&#34;http://localhost:2944/post/blog-build/check-env.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/check-env.png&#34;
 	width=&#34;1294&#34;
 	height=&#34;735&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/check-env_hu44dd32dc5abc4d243bc15f1adeb90740_37274_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;检验环境变量&#34;
@@ -664,10 +664,10 @@
 		data-flex-basis=&#34;422px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:2944/post/blog-build/check-env-ok.png&#34;
+&lt;img src=&#34;http://localhost:7447/post/blog-build/check-env-ok.png&#34;
 	width=&#34;1858&#34;
 	height=&#34;373&#34;
-	srcset=&#34;http://localhost:2944/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, http://localhost:2944/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:7447/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_480x0_resize_box_3.png 480w, http://localhost:7447/post/blog-build/check-env-ok_hu17c1e7c6900214bc8316908d0a4d281b_90053_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;配置环境变量成功&#34;
