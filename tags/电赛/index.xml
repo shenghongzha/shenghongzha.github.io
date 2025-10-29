@@ -1,26 +1,254 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>电赛 on </title>
-    <link>https://blog.mokuai.space/tags/%E7%94%B5%E8%B5%9B/</link>
-    <description>Recent content in 电赛 on </description>
-    <generator>Hugo</generator>
-    <language>zh-Hans</language>
-    <lastBuildDate>Fri, 24 Oct 2025 20:06:27 +0800</lastBuildDate>
-    <atom:link href="https://blog.mokuai.space/tags/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>各怀鬼胎</title>
-      <link>https://blog.mokuai.space/post/electronic-design-competition/</link>
-      <pubDate>Fri, 09 Aug 2024 13:31:08 +0800</pubDate>
-      <guid>https://blog.mokuai.space/post/electronic-design-competition/</guid>
-      <description>&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/C%E9%A2%98_%E6%97%A0%E7%BA%BF%E4%BC%A0%E8%BE%93%E4%BF%A1%E5%8F%B7%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F.pdf&#34;&gt;题目下载&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/2024%E5%B9%B4%E7%94%B5%E8%B5%9B%E7%AD%94%E7%96%91.txt&#34;&gt;答疑&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;参考资料&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;&gt;AM调制&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/AD9959_en.pdf&#34;&gt;AD9959&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;题干重新提炼&#34;&gt;题干重新提炼&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;测试点应为 $S_D$ 、 $S_M$ 与 $S_{Out}$&lt;/li&gt;&#xA;&lt;li&gt;$S_D$ 与 $S_M$ 均为合成信号（最好高度可调），且$S_M$与$S_D$应满足$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$&lt;/li&gt;&#xA;&lt;li&gt;$S_D$（无线传输信号的直达信号） 可以看作做$W_c$载波信号与$W_m$调制信号的两者相乘的结果。因此$S_M$亦可以看作俩种信号的相乘。&lt;/li&gt;&#xA;&lt;li&gt;题目要求$W_c$信号的频率$f_c$与有效值$EV_c$可调，对于$W_m$信号其幅度可调。对于无线传输信号而言要求其调制可调，对于$S_M$与$S_D$关系式中的$\alpha$、$\tau$、$\varphi$可调&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;系统架构框图展示&#34;&gt;系统架构框图展示&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;2024-C-structure.png&#34; alt=&#34;框图展示&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;方案详解&#34;&gt;方案详解&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;本部分详细从每个小题目出发，总结我们需要到达的指标，以及每个题目本质上是在考察什么。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h4 id=&#34;题目一&#34;&gt;题目一&lt;/h4&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;模拟产生一个固定载波频率的无线传输信号，载波频率 $f_c$ 介于30MHz ~ 40MHz 之间，其中直达传输信号$S_D$和多径传输信号$S_M$满足以下要求&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;可设置无线传输信号为连续波（CW）信号或调幅（AM）信号。对于 AM 信号，其调制信号为 2MHz 频率的正弦信号。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;第一题第一问要求相对简单，要求我们产生的无线传输信号为CW信号或AM信号即可。需要注意的是&lt;strong&gt;此处所说的是无线传输信号&lt;/strong&gt;，无论是直达信号还是多径信号都是无线传输信号。而且要求为CW或AM信号，即既需要做到无线传输信号为CW信号，又需要无线传输信号为AM信号。这里我们需要$\textcolor{red}{无线传输信号可进行切换，自由选择输出AM信号还是CW信号}$&lt;/p&gt;&#xA;&lt;p&gt;研究AM信号的产生原理见&lt;a href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;&gt;参考资料1&lt;/a&gt;&#xA;&lt;img src=&#34;make-AM-signal.png&#34; alt=&#34;产生AM&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;我们巧合发现，只需使调制信号为0，此时的$s(t)$即为连续波信号。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;因此做完第一题第一问，我们至少需要三路信号，其中俩路信号是正弦波信号，一路信号为直流量。正弦型号一路保持频率保持30MHz ~ 40MHz之间，一路信号频率保持2Mhz，但其幅值至少在俩个不连续的挡位间可切换（0与非0）。本问并不要求$S_D$与$S_M$之间的差异，因此目前可以使$S_D$与$S_M$保持一致&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;模拟产生直达传输信号 SD，载波幅度有效值可设置，有效值范围为100mV ~ 1V ，以 100mV 的步进可调，要求幅度有效值误差不大于10mV；对于 AM 信号，其 AM 调制度可设置，调制度范围为 30%~90%，以 10%的步进可调，误差不大于 5%。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;本题要求$S_D$的$W_c$的有效值$EV_c$可调，需要注意这里的隐含条件。换个角度思考一下，对于测量时，如何从仅有三个测试点$S_D$ 、 $S_M$ 与 $S_{Out}$测量合成前的信号的有效值。对于题目而言他并未要求调制信号的有效值，因此如果测量让使用AM信号测量有效值，对于每个参赛选手的结果必定是不同的，那么他会采用什么方式测量？没错CW信号的有效值。&lt;/p&gt;&#xA;&lt;p&gt;本题还要求AM信号的调制度可调，便要求直流信号连续可调，调制信号幅值可调。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;因此做完第一题第二问，我们至少需要三路信号，其中俩路信号是正弦波信号，一路信号为直流量，其直流量连续可调。正弦型号一路保持频率保持30MHz ~ 40MHz之间，一路信号频率保持2Mhz，但其幅值可以连续可调。本问并不要求$S_D$与$S_M$之间的差异，因此目前可以使$S_D$与$S_M$保持一致&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;模拟产生的多径传输信号 SM，其幅度衰减和时延可设置。相对直达信号，多径信号的时延范围为 50 ~ 200 ns ，以 30ns 的步距步进可调，要求时延误差不大于 10ns；幅度的衰减范围为 0 ~ 20 dB ，以 2 dB 的步进可调，要求衰减误差不大于 1dB。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;本题需要接触$S_M$与$S_D$之间的关系式$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$，我们的理解是&#xA;&lt;img src=&#34;SD2SM.png&#34; alt=&#34;SD2SM&#34;&gt;&#xA;但后来测试过程时延我得知，时延是针对于载波的，二相移是针对与调制信号，我就😥&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>努力一定有结果吗？</title>
-      <link>https://blog.mokuai.space/post/hard-work-leads-to-success/</link>
-      <pubDate>Sun, 05 May 2024 21:06:45 +0800</pubDate>
-      <guid>https://blog.mokuai.space/post/hard-work-leads-to-success/</guid>
-      <description>&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;&#xA;&lt;p&gt;说来也奇怪，学校的许多比赛的校赛总喜欢在五一举行，或许五一大家都有时间，而且时间足够长？今年五一不出意外，我参加了电赛校赛（又没有出去玩😭），这篇文章算是对我五一假期参赛过程的一个记录，也是对失败的一种反思吧，同时总结一下我从上大学开始到现在参加许多比赛的所见所闻所感。&lt;/p&gt;&#xA;&lt;p&gt;无论是什么校赛，在五一期间举办总有一个特点，赛程总是比正式比赛（省赛或国赛）长不少，这样也挺好，兼顾了更多的学生，同时也避免了像正式比赛那样的高强度，熬夜伤身体。&lt;/p&gt;&#xA;&lt;h2 id=&#34;回顾电赛校赛&#34;&gt;回顾电赛校赛&lt;/h2&gt;&#xA;&lt;p&gt;今年电赛4月28日上午8:00发题，5月5日上午8:00截止（&lt;a href=&#34;https://edc.xidian.edu.cn/html/notices/20240417/198.html&#34;&gt;校赛通知&lt;/a&gt;）。我在假期前几天课比较多多，虽说时间比较长，但我也是4月30日晚才开始读题。总体来说算是起步比较晚了，但是相较于正式比赛而已，还是比较充裕的，我们这次选的题(&lt;a href=&#34;https://edc.xidian.edu.cn/html/notices/20240428/201.html&#34;&gt;A题&lt;/a&gt;)也算比较简单。按照这个时间，这个难度，我们应对起来算是比较惬意的。&lt;/p&gt;&#xA;&lt;p&gt;但也正是因为这种惬意，导致我们大意而错失良机，我们简单阅读题干之后，得出大致方案：方波发生器、滤波器，移相器，加法器、直流偏置、分压电路。这不轻轻松松，游戏结束，至于代码，早已写过相同的，直接秒了。对于滤波器、移相器，我们认为这种重复组件，今年参加省赛（小年）的时候一定会用到，直接上高精度模块，轻轻松松，秒了，上网购置模块，制作方波发生电路，结束。开始摸鱼，或许因为这样的随意对待，造成了我们的失败。&lt;/p&gt;&#xA;&lt;p&gt;网购的东西不到，我们也没有进行后续操作，只是嘴上一直在说，要个啥，要个啥，却从未动手操作。我代码早已结束，稍微修正了一下精度，控制到99.5%就停了。每天就中午吃完饭去一下实验室，坐到晚上，晚上回去深夜打“塔克夫”，第二天又是12点起床，这样重复了几天，才发现好像一切没有这么容易。事情好像不再按计划进行了。或许人生的轨迹就是在一个个微小的决定中一点点偏航又返航的循环中。&lt;/p&gt;&#xA;&lt;p&gt;5月3日，先是出现第一天（5月1日）做好且测试了的方波发生电路无法产生方波的消息，再出现硬件（5月2号一个做硬件的回家了，另一个前一段时间在忙数竞国赛，并未投身到电赛训练中）这边焊接的加法电路好像也存在问题，我不能再摸鱼了，便转身开始辅助硬件这边做加法电路，同时嘱咐其去完成报告（我其实在前一天5月2日下午便说，我要做的早都做完了，写会报告吧，但其实我只是改了封面的队号）。&lt;/p&gt;&#xA;&lt;p&gt;就这样在最后时间，我们开始马马虎虎的赶，要修改方波发生电路，要做加法电路、直流偏置、分压电路。这样看来我们好像什么都没做，所以我在那天开始就开始吐槽，我们好像什么都没做。买的模块只到了移相器，半天也测不明白。5月3日，晚上我紧赶慢赶终于把俩个加法器电路制作完成。我的那个队友也成功把方波发生电路修缮完成。这样看来一切好似都在向好的方向发展。但世事难料，一分耕耘一分收获。我们的大意致使我们的失败已成一种不可避免的事实。&lt;/p&gt;&#xA;&lt;p&gt;第二天，也是交题前的最后一天，中午工作前滤波模块到达，开始调试。调试好，方波电路又出问题，产生方波的频率变成了3k！！，这时我室友也来找我求程序，我已经有点想要放了的节奏，便帮我室友移植我的代码到他的板子上，我开发STM32使用的稚晖君“&lt;a href=&#34;https://zhuanlan.zhihu.com/p/145801160&#34;&gt;配置CLion用于STM32开发【优雅の嵌入式开发】&lt;/a&gt;”的这套方案，有时使用PlatformIO进行开发，我的室友使用Keil，同时我会使用git管理代码，我并不想将git的所有分支全部拷贝到室友电脑上，于是我便单独将源码拷出来，重新配置工程，其中也遇到一些困难，同时也去我室友的实验室参观了一下，他的作品如下图。&#xA;&lt;img src=&#34;edc-school-outstanding.jpg&#34; alt=&#34;室友作品&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;参观了他的实验室，听了他的讲解，我其实有点退缩了。我在想到底要不要实物评测（我们的实物感觉十分恶心）。&#xA;&lt;img src=&#34;give-up-show.jpg&#34; alt=&#34;放弃实物展示&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;或许是这放弃，让我不再想着赶工了，我也开始渐渐冷静下来，不是那么着急了。开始反思了。这次落得这样的结果的原因是什么，为什么他开始慢慢脱离我们的掌控了。如何把一手好牌大的稀烂？&lt;/p&gt;&#xA;&lt;h2 id=&#34;电赛校赛教训&#34;&gt;电赛校赛教训&lt;/h2&gt;&#xA;&lt;p&gt;俗话说的，吃一堑、长一智。现在踩得坑越深，之后的遇到浅坑就和平地一样。对于电赛校赛，我总结了以下以下经验，也希望对想参与电赛的同学有所启发吧。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;获取题的第一时间，队伍内所有人确定技术方案。一定要所有人！！之后可以在队长的主导下，分配一人完成仿真，一人开始写报告开始的方案部分，一人开始简单代码工作。&lt;/li&gt;&#xA;&lt;li&gt;焊接相关，使用滑动变阻器代替要使用的特殊位置的定值电阻。对于仪器仪表类（信号处理），精度是十分关键的。但对于电阻，其本身存在一定的误差，难以做到与仿真结果一致，同时焊接过程中可能存在电阻损坏或短路导致短路，从而导致误差，因此使用滑动变阻器可以为之后留有一定的修改空间。&lt;/li&gt;&#xA;&lt;li&gt;整理清楚当前所用材料，使用完放回原位。就本次题目而言，其实即使最后一天也是来得及的，但由于最后的慌乱与实验室的杂乱，导致找东西也浪费不少时间。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;回归正题&#34;&gt;回归正题&lt;/h2&gt;&#xA;&lt;p&gt;说了这么多题外话，该说一说正题了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;努力一定有结果吗？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;在回答这个问题之前，我觉得首先有必要确定一个概念：要什么样的结果？努力就要有回报、努力就要有比不努力的人更多的回报。&lt;/p&gt;&#xA;&lt;p&gt;我认为“越努力，越幸运”。&lt;code&gt;努力不一定有回报，但你的钢铁身躯会记住的你的经历&lt;/code&gt;。接下来，我将以我个人在大学俩年期间的竞赛经历与从小到大的学习经历为例。逐渐论证这个观点。&lt;/p&gt;&#xA;&lt;p&gt;前一阵的时候，我总被我身边的说起，我很聪明之类的话，说我不学也能会诸如此类的话。这么说，我的内心是幸喜若狂的。毕竟谁不喜欢被同龄所认同与夸赞，不可否认，我是一个世俗的人。他们这么说，我也这么相信。毕竟我是真的没有怎么认真学习过，高中边玩边学，也没怎么努力，考上了一个末流211，在别人眼中，好似别人家长眼中的“别人家的孩子”。但对我而言，好像真的什么都未做。大学也是浑浑噩噩，瞎混，瞎搞。但最后成绩好像也还行。&lt;/p&gt;&#xA;&lt;p&gt;这一切的一切让我沉浸于“我就是聪明，不努力也行”。时间很快，距离六级考试就差一个多月时间，&lt;code&gt;人总会在接近死亡时才会害怕死亡&lt;/code&gt;。对我而言，以目前我所掌握的数据，我只要正常发挥，之后保研将是稳定的，但在我们学校有一要求，保研的硬性要求——过六级。对我而言，我在大一6月并未考六级，去年12月首战六级，以相差一百多分而败北。如果我还想保研，我就必须在今年6月或12月通过六级，明年6月即使通过也无法在保研时间点前获得成绩。对我而言，我仅剩最后2次机会。但我仍记得，我的同学，夸我聪明的其中一人，他裸考六级600+，他好像很聪明？而我却没过六级。&lt;/p&gt;&#xA;&lt;p&gt;我聪明吗？有人会说，每个人都有擅长的领域，术业有专攻，我聪明，他也聪明。可真是如此吗？他们总说“我很聪明”之类的话，我便向着聪明的方向发展，他对我的期望成为我的自我实现的预言，而我相当于完成了他的预言？这是“皮格马利翁效应&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;”，有心理学效应支撑，没错，一定是这样。但好像有问题呀，难道别人说一说你可以，你就可以吗？好像并不行，别人的话语只是对自己的一种暗示，这种暗示只是导火索，爆炸还得靠自己。&lt;/p&gt;&#xA;&lt;p&gt;我没有怎么认真学习过？我好像否定了自己的努力，我有认真学习过。我从小到大都在认真学习！小时候我很好学，我至今仍记得俩件事，我小学的时候，总喜欢找数学老师去问题，刚开始是去问问题，但后来，我总觉得觉得自己很厉害，便开始研究怎么把老师难住（那个时候网络还不发达，没有什么拍照搜题之类的工具），现在或许回头看问的问题或许很幼稚，但真是当初那位数学老师&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;不断的解答，我不断出题，锻炼我在该方面思维。另一件事是我小学有一段时间沉迷于研究找规律，当初学了能除以3的数所有位数相加都是3的倍数，我便在想别的数呢，如何快速判断一个数能否被别的数整除，比如7或4。我沉迷于找到一个简单的数学形式判断这个问题，我还沉迷于找一个图形中最多有多少个三角形之类的问题，这个问题记得形象极其深刻，我小学放学过马路时曾被轿车撞后便沉迷这个问题，在等交警的时候便在研究这个问题（不能让脑子闲下来，浪费时间）。&lt;/p&gt;&#xA;&lt;p&gt;我觉得真是因为小学的这种锻炼，让我对这个方面上手速度加快，从而造成我看似很聪明的现象。我将1+1掌握的极其牢固，之后9*9就会很简单，别人1+1还不怎么懂，9*9当然很难学会,不是说学不会，是很难。当然举例或许夸张，但我认为这一观点可以在自己遇到挫折分析原因时作参考。&lt;code&gt;现在失败可能是在还过去的债&lt;/code&gt;。基于这个观点，分析我六级为何没过，因为我英语欠的债太多太多。我是仅在刚学英语时有认真付出，但仅仅局限于“What&amp;rsquo;s your name?”，之后便是初二末期，为了中考不得不学习英语，但接触便是应试教育的那一套——如何在你不会做的情况下，把题作对。这短期来看收益最大，但却造成了我长期以来英语漏洞的越来越大。或许英语的问题便在六级处显现了，还是那位600+的同学，他说他英语完全在吃老本，高中到现在都没学过英语，不过他小时候，每天早上听英语音频跟读。他好像和我一样都在“吃老本”。这便是我最开始说的“努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;&#xA;&lt;p&gt;这件事也让我想起一件事，我在上个学期曾跟着中长跑田径队训练了一段时间，寒假期间到这个学习一直没有怎么练，最近闲下来才有时间捡起来恢复一下，我有明显的感觉，我即使有一段时间没有认真练过，但我的实力也相比于大一刚开学强不少。前几天2024年美国大学生数学建模大赛成绩出了，我们队H奖，但实话实说，我感觉我什么都没做，我买了北海的课程，但从没看过。参加了大学生数学建模竞赛，感觉啥都没做，就是一个省一。所以，我给予评价：数模很水。事实好像并不是这样的，我们学校照样有一堆S（successful Participant）奖，甚至还有U（unsuccessful Participant）奖。当然M奖与F奖也有不少。&#xA;&lt;img src=&#34;running.jpg&#34; alt=&#34;跑步截图&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;我竞赛的获奖好像都是在吃老本，截至目前为止，大学我参与过ACM、数学建模、数学竞赛。这些竞赛我都能取得一些小成就，原因在哪？竞赛水平不行？显然是错的，我而是我的老本足够厚，这让我能取得一些小成绩，正是这些小成绩，我对外说，竞赛其实很简单。别人在趋利的形式下，进入竞赛，他努力了或许就有结果。没努力呢？他成为别人有老本的人的垫子&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。而没努力获奖的人又会去告诉别人这个竞赛很简单，形成了对部分人的“良性循环”。这部分人，他们无论如何是有老本，曾经努力过的，所以他们能够幸运的进入“良性循环”之中。&lt;/p&gt;&#xA;&lt;p&gt;现在再次回答最开始的问题，努力一定有结果吗？明确一个概念：结果是指努力的人就要有比不努力的人更多的回报。我的答案是“努力不一定有结果。但越努力，越幸运，努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;&#xA;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;&#xA;&lt;hr&gt;&#xA;&lt;ol&gt;&#xA;&lt;li id=&#34;fn:1&#34;&gt;&#xA;&lt;p&gt;皮格马利翁效应，又称罗森塔尔效应，通常指一个人对另一个人行为的期望成为自我实现的预言的现象。最早由罗伯特·罗森塔尔（Robert Rosenthal）与伊迪丝·雅各布森（Edith Jacobson）正式提出。他们在实验中从班级中随机挑选部分学生，告诉教师这些学生拥有过人的智力水平，极具发展潜能，但要对其他人保密。一段时间后发现这些被随机选中的学生成绩进步很大，且变得十分自信积极。总结来说，是教师对学生形成的期望会使学生的学习成绩和行为表现向符合该期望的方向发展。这一效应启示我们，如果你对他人有所期待，可以通过以真诚的态度对待对方，给予其由衷的赞赏，从而调动其积极性，促使其朝着自己所期望的方向发展，这份期待或许就会成真。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li id=&#34;fn:2&#34;&gt;&#xA;&lt;p&gt;在此感谢那位数学老师的知道，我忘记了您的名字，但您对我启迪够我受益终身，鞠躬致谢！&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li id=&#34;fn:3&#34;&gt;&#xA;&lt;p&gt;大多数竞赛参赛人数的比例发奖，一个竞赛参与人数越多，就有越多的人能获奖，而对于没有获奖的人，一般称其为垫子，因为他的参与可能使一些本不能获奖的人获奖，帮助别人垫高了。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>电赛 on SanmuDang的博客</title>
+        <link>https://blog.mokuai.space/tags/%E7%94%B5%E8%B5%9B/</link>
+        <description>Recent content in 电赛 on SanmuDang的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-Hans</language>
+        <lastBuildDate>Fri, 09 Aug 2024 17:24:10 +0800</lastBuildDate><atom:link href="https://blog.mokuai.space/tags/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>各怀鬼胎</title>
+        <link>https://blog.mokuai.space/post/electronic-design-competition/</link>
+        <pubDate>Fri, 09 Aug 2024 13:31:08 +0800</pubDate>
+        
+        <guid>https://blog.mokuai.space/post/electronic-design-competition/</guid>
+        <description>&lt;img src="https://blog.mokuai.space/post/electronic-design-competition/EDC-2024-post-question.png" alt="Featured image of post 各怀鬼胎" /&gt;&lt;h2 id=&#34;2024年c题&#34;&gt;2024年C题
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/C%E9%A2%98_%E6%97%A0%E7%BA%BF%E4%BC%A0%E8%BE%93%E4%BF%A1%E5%8F%B7%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目下载&lt;/a&gt; &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/2024%E5%B9%B4%E7%94%B5%E8%B5%9B%E7%AD%94%E7%96%91.txt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;答疑&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;参考资料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AM调制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/AD9959_en.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AD9959&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;题干重新提炼&#34;&gt;题干重新提炼
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;测试点应为 $S_D$ 、 $S_M$ 与 $S_{Out}$&lt;/li&gt;
+&lt;li&gt;$S_D$ 与 $S_M$ 均为合成信号（最好高度可调），且$S_M$与$S_D$应满足$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$&lt;/li&gt;
+&lt;li&gt;$S_D$（无线传输信号的直达信号） 可以看作做$W_c$载波信号与$W_m$调制信号的两者相乘的结果。因此$S_M$亦可以看作俩种信号的相乘。&lt;/li&gt;
+&lt;li&gt;题目要求$W_c$信号的频率$f_c$与有效值$EV_c$可调，对于$W_m$信号其幅度可调。对于无线传输信号而言要求其调制可调，对于$S_M$与$S_D$关系式中的$\alpha$、$\tau$、$\varphi$可调&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;系统架构框图展示&#34;&gt;系统架构框图展示
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://blog.mokuai.space/post/electronic-design-competition/2024-C-structure.png&#34;
+	width=&#34;925&#34;
+	height=&#34;346&#34;
+	srcset=&#34;https://blog.mokuai.space/post/electronic-design-competition/2024-C-structure_hu_ddf96e5a7e4864ad.png 480w, https://blog.mokuai.space/post/electronic-design-competition/2024-C-structure_hu_a79b20314b52a4f3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;框图展示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;267&#34;
+		data-flex-basis=&#34;641px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;方案详解&#34;&gt;方案详解
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;本部分详细从每个小题目出发，总结我们需要到达的指标，以及每个题目本质上是在考察什么。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;题目一&#34;&gt;题目一
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;模拟产生一个固定载波频率的无线传输信号，载波频率 $f_c$ 介于30MHz ~ 40MHz 之间，其中直达传输信号$S_D$和多径传输信号$S_M$满足以下要求&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;可设置无线传输信号为连续波（CW）信号或调幅（AM）信号。对于 AM 信号，其调制信号为 2MHz 频率的正弦信号。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;第一题第一问要求相对简单，要求我们产生的无线传输信号为CW信号或AM信号即可。需要注意的是&lt;strong&gt;此处所说的是无线传输信号&lt;/strong&gt;，无论是直达信号还是多径信号都是无线传输信号。而且要求为CW或AM信号，即既需要做到无线传输信号为CW信号，又需要无线传输信号为AM信号。这里我们需要$\textcolor{red}{无线传输信号可进行切换，自由选择输出AM信号还是CW信号}$&lt;/p&gt;
+&lt;p&gt;研究AM信号的产生原理见&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_39376872/article/details/130616192&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考资料1&lt;/a&gt;
+&lt;img src=&#34;https://blog.mokuai.space/post/electronic-design-competition/make-AM-signal.png&#34;
+	width=&#34;1012&#34;
+	height=&#34;382&#34;
+	srcset=&#34;https://blog.mokuai.space/post/electronic-design-competition/make-AM-signal_hu_4690717951d2b244.png 480w, https://blog.mokuai.space/post/electronic-design-competition/make-AM-signal_hu_5928e063fec48e3d.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;产生AM&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;264&#34;
+		data-flex-basis=&#34;635px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我们巧合发现，只需使调制信号为0，此时的$s(t)$即为连续波信号。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;因此做完第一题第一问，我们至少需要三路信号，其中俩路信号是正弦波信号，一路信号为直流量。正弦型号一路保持频率保持30MHz ~ 40MHz之间，一路信号频率保持2Mhz，但其幅值至少在俩个不连续的挡位间可切换（0与非0）。本问并不要求$S_D$与$S_M$之间的差异，因此目前可以使$S_D$与$S_M$保持一致&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;模拟产生直达传输信号 SD，载波幅度有效值可设置，有效值范围为100mV ~ 1V ，以 100mV 的步进可调，要求幅度有效值误差不大于10mV；对于 AM 信号，其 AM 调制度可设置，调制度范围为 30%~90%，以 10%的步进可调，误差不大于 5%。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本题要求$S_D$的$W_c$的有效值$EV_c$可调，需要注意这里的隐含条件。换个角度思考一下，对于测量时，如何从仅有三个测试点$S_D$ 、 $S_M$ 与 $S_{Out}$测量合成前的信号的有效值。对于题目而言他并未要求调制信号的有效值，因此如果测量让使用AM信号测量有效值，对于每个参赛选手的结果必定是不同的，那么他会采用什么方式测量？没错CW信号的有效值。&lt;/p&gt;
+&lt;p&gt;本题还要求AM信号的调制度可调，便要求直流信号连续可调，调制信号幅值可调。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;因此做完第一题第二问，我们至少需要三路信号，其中俩路信号是正弦波信号，一路信号为直流量，其直流量连续可调。正弦型号一路保持频率保持30MHz ~ 40MHz之间，一路信号频率保持2Mhz，但其幅值可以连续可调。本问并不要求$S_D$与$S_M$之间的差异，因此目前可以使$S_D$与$S_M$保持一致&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;模拟产生的多径传输信号 SM，其幅度衰减和时延可设置。相对直达信号，多径信号的时延范围为 50 ~ 200 ns ，以 30ns 的步距步进可调，要求时延误差不大于 10ns；幅度的衰减范围为 0 ~ 20 dB ，以 2 dB 的步进可调，要求衰减误差不大于 1dB。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本题需要接触$S_M$与$S_D$之间的关系式$S_M(t) = \alpha *S_D(t + \tau)*e^{j\varphi}$，我们的理解是
+&lt;img src=&#34;https://blog.mokuai.space/post/electronic-design-competition/SD2SM.png&#34;
+	width=&#34;882&#34;
+	height=&#34;835&#34;
+	srcset=&#34;https://blog.mokuai.space/post/electronic-design-competition/SD2SM_hu_e7843a1d39aaee6f.png 480w, https://blog.mokuai.space/post/electronic-design-competition/SD2SM_hu_6d672ffc84cd6ab9.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;SD2SM&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;105&#34;
+		data-flex-basis=&#34;253px&#34;
+	
+&gt;
+但后来测试过程时延我得知，时延是针对于载波的，二相移是针对与调制信号，我就😥&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;因此做完第一题第三问，我们至少需要六路信号，其中四路路信号是正弦波信号，两路路信号为直流量，其直流量分别连续可调。正弦型号俩路保持频率保持30MHz ~ 40MHz之间且频率一致，初始相位分别可调，幅度分别可调，两路路信号频率保持2Mhz，但其幅值可以分别连续可调。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;题目二&#34;&gt;题目二
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;模拟产生直达传输信号 SD，在30MHz ~ 40MHz 范围内设置载波频率，要求频率误差不大于 2%；其他可设置参数满足（1）中 1）和 2）的指标要求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;此问只需保证载波频率可调，需要注意的是保证多径信号的载波与直达信号的载波频率一致即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;因此做完第二题第一问，我们至少需要六路信号，其中四路路信号是正弦波信号，两路路信号为直流量，其直流量分别连续可调。正弦型号俩路保持频率保持30MHz ~ 40MHz之间连续可调且频率一致，初始相位分别可调，幅度分别可调，两路路信号频率保持2Mhz，但其幅值可以分别连续可调。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;模拟产生多径传输信号 SM，相对直达信号 SD 的初始相位可设置，设置范围为 0° ~ 180° ，以 30°的步进可调，要求初始相位误差不大于10°；其他可设置参数满足（1）中 3）的指标要求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;因此做完第二题第二问，我们至少需要六路信号，其中四路路信号是正弦波信号，两路路信号为直流量，其直流量分别连续可调。正弦型号俩路保持频率保持30MHz ~ 40MHz之间连续可调且频率一致，初始相位分别可调，幅度分别可调，两路路信号频率保持2Mhz，但其幅值可以分别连续可调，初始相位可分别调整。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;器件选型与代码书写&#34;&gt;器件选型与代码书写
+&lt;/h4&gt;&lt;p&gt;对于上述要求需要产生4路正弦信号，幅度、相位、频率可调。推荐使用&lt;strong&gt;AD9959&lt;/strong&gt;。两路直流量使用&lt;strong&gt;DAC&lt;/strong&gt;产生，推荐一个带两路DA单片机。，计算在单片机内统一运算。系统搭建采用如上框图构建。考虑到ad9959信号出来后最大幅值与频率有关。可以在其信号出来后先接AGC，后接放大器，这样一切幅值控制全靠放大器，避免寻找ad9959信号出来后最大幅值与频率的关系。&lt;/p&gt;
+&lt;h2 id=&#34;2023年h题&#34;&gt;2023年H题
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/mokuaisp/LFS-provider/main/blog/shenghongzha/Electronic_Design_Competition/H%E9%A2%98_%E4%BF%A1%E5%8F%B7%E5%88%86%E7%A6%BB%E8%A3%85%E7%BD%AE.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目下载&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;参考资料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://doc.embedfire.com/fpga/altera/ep4ce10_pro/zh/latest/code/ip.html#ippll&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PLL倍频原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://doc.embedfire.com/fpga/altera/ep4ce10_pro/zh/latest/code/dds.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;简易DDS原理&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;难点&#34;&gt;难点
+&lt;/h3&gt;&lt;p&gt;本次题目中难点为如何实现&lt;strong&gt;稳定同频显示&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里不采用滤波方案，而是采用分析波形组成（对波形进行FFT即可），重新利用DDS生成合成前的波形。这时便会发现重新产生的波形原信号无法同频显示。网上分析原因的文章已经很多了，这里我就直接说结论，无法实现稳定同频显示的原因是&lt;strong&gt;新产生的产生波形&lt;/strong&gt;与&lt;strong&gt;合成前的波形&lt;/strong&gt;不是同一个时钟源。也就是解决时钟源同步问题就可以解决同频显示问题。&lt;/p&gt;
+&lt;p&gt;我们知道合成前波形的频率一定是5khz的倍数。我们取对合成后的波形与地电位进行比较，产生时钟源，然后对其使用锁相环倍频，倍频后作为DDS时钟，使DDS产生波形。需要注意的是倍频倍数与DDS相位累加寄存器的值相关与产生波形与当前时钟的的频率有关。&lt;/p&gt;
+&lt;p&gt;举个简单的例子，对于20khz的正弦波与30khz的正弦波相加。其合成后的波形频率为10khz，因此要产生20khz的正弦波就需要倍频2*相位数。&lt;/p&gt;
+&lt;h2 id=&#34;各怀鬼胎&#34;&gt;各怀鬼胎
+&lt;/h2&gt;&lt;p&gt;说了两道题，现在该瞎聊一下了。先说说队友选择。&lt;/p&gt;
+&lt;h3 id=&#34;队友选择&#34;&gt;队友选择
+&lt;/h3&gt;&lt;p&gt;我认为电赛选择队友要先以兴趣为主。即你的队友对电工电子之类的内容比较感兴趣。平常有接触此类内容，或者在你的引导下对此方面有兴趣。单论上课（诸如模电、电路分析之类的）这种，对于解决电赛中的问题太浅薄，是万万不足的，需要平常对电工电子常识有所了解。其次，避免选择专心投身于学习培养方案内课程的人，这类人有一特点，普遍专注于课程学习、理论学习，往往忽视了动手实践的能力，这也是现在大部分大学所面临的一个问题（我认为，不代表就是这样），学生动手实践能力差，即使安排有实验课程，但是学生甚至不做实验，直接剽窃他人数据。或者直接让他人代做。电赛是一个需要把想法快速落地的比赛。没有很好的动手实践能力，很难在电赛中取得好成绩。最后，队友慎重选择熟人，熟人之间不好交流。&lt;/p&gt;
+&lt;p&gt;队友选择————平常成绩一般，乞求当前竞赛挽救自己的命运，孤注一掷的人。只有在悬崖之巅、绝境之中，人才会拼劲全力！&lt;/p&gt;
+&lt;h3 id=&#34;瞎谈谈&#34;&gt;瞎谈谈
+&lt;/h3&gt;&lt;p&gt;说说自己的个人经历吧，我从今年年初开始到8月总计参加了3场电赛，分别是“电赛校赛”、“陕西省工科联赛”、“陕西省TI杯”。短期来看，我的参赛密度算相对较高的。那获奖结果呢？无一列外，没有一个获奖的。原因在哪里？我认为对竞赛不认真对待占大头。要说不认真对待，我认为我所处的实验室有一定的原因，我们实验室学长告诉我们，电赛就是到时候买一点模块拼一拼就好了，我们教练就在培训群里转发消息就再没有具体的培训行为了。可话说到底，我们自己就没有什么问题了吗？为何把错误归咎于他人。我们自己对待一点也不认真，电赛校赛比赛整个五一假期，队友说买几个模块，他有事要回家（呵呵），另一个队友我看其成绩好便拉了进来，但电赛期间连个电路都不会焊接，然后对方案一点想法与建议都没有。平时我在实验室更是难以见到那俩人。工科联赛期间，一个队友要复习数竞。一个队友我已经不记得他在干什么了。因为是熟人，所以也不好说辞别人。7月不出意外，放假了留校总能来实验室了吧。但只有7月25号左右之后才来实验室。属于一点也不懂直接上战场。不错完美。&lt;/p&gt;
+&lt;p&gt;$\textcolor{red}{努力会有结果吗？}$&lt;/p&gt;
+&lt;p&gt;$\textcolor{red}{不努力一定不会有，世上永远没有捷径可言}$&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>努力一定有结果吗？</title>
+        <link>https://blog.mokuai.space/post/hard-work-leads-to-success/</link>
+        <pubDate>Sun, 05 May 2024 21:06:45 +0800</pubDate>
+        
+        <guid>https://blog.mokuai.space/post/hard-work-leads-to-success/</guid>
+        <description>&lt;img src="https://blog.mokuai.space/post/hard-work-leads-to-success/the-harder-the-luck.png" alt="Featured image of post 努力一定有结果吗？" /&gt;&lt;p&gt;如果听一万遍反方向的钟能回到五一放假第一天就好了。如果真的回到五一，在我不知情上次五一所作时，我的选择会不同吗？我很难给出一个确切的答案，毕竟无法回到过去😂。&lt;/p&gt;
+&lt;p&gt;说来也奇怪，学校的许多比赛的校赛总喜欢在五一举行，或许五一大家都有时间，而且时间足够长？今年五一不出意外，我参加了电赛校赛（又没有出去玩😭），这篇文章算是对我五一假期参赛过程的一个记录，也是对失败的一种反思吧，同时总结一下我从上大学开始到现在参加许多比赛的所见所闻所感。&lt;/p&gt;
+&lt;p&gt;无论是什么校赛，在五一期间举办总有一个特点，赛程总是比正式比赛（省赛或国赛）长不少，这样也挺好，兼顾了更多的学生，同时也避免了像正式比赛那样的高强度，熬夜伤身体。&lt;/p&gt;
+&lt;h2 id=&#34;回顾电赛校赛&#34;&gt;回顾电赛校赛
+&lt;/h2&gt;&lt;p&gt;今年电赛4月28日上午8:00发题，5月5日上午8:00截止（&lt;a class=&#34;link&#34; href=&#34;https://edc.xidian.edu.cn/html/notices/20240417/198.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;校赛通知&lt;/a&gt;）。我在假期前几天课比较多多，虽说时间比较长，但我也是4月30日晚才开始读题。总体来说算是起步比较晚了，但是相较于正式比赛而已，还是比较充裕的，我们这次选的题(&lt;a class=&#34;link&#34; href=&#34;https://edc.xidian.edu.cn/html/notices/20240428/201.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;A题&lt;/a&gt;)也算比较简单。按照这个时间，这个难度，我们应对起来算是比较惬意的。&lt;/p&gt;
+&lt;p&gt;但也正是因为这种惬意，导致我们大意而错失良机，我们简单阅读题干之后，得出大致方案：方波发生器、滤波器，移相器，加法器、直流偏置、分压电路。这不轻轻松松，游戏结束，至于代码，早已写过相同的，直接秒了。对于滤波器、移相器，我们认为这种重复组件，今年参加省赛（小年）的时候一定会用到，直接上高精度模块，轻轻松松，秒了，上网购置模块，制作方波发生电路，结束。开始摸鱼，或许因为这样的随意对待，造成了我们的失败。&lt;/p&gt;
+&lt;p&gt;网购的东西不到，我们也没有进行后续操作，只是嘴上一直在说，要个啥，要个啥，却从未动手操作。我代码早已结束，稍微修正了一下精度，控制到99.5%就停了。每天就中午吃完饭去一下实验室，坐到晚上，晚上回去深夜打“塔克夫”，第二天又是12点起床，这样重复了几天，才发现好像一切没有这么容易。事情好像不再按计划进行了。或许人生的轨迹就是在一个个微小的决定中一点点偏航又返航的循环中。&lt;/p&gt;
+&lt;p&gt;5月3日，先是出现第一天（5月1日）做好且测试了的方波发生电路无法产生方波的消息，再出现硬件（5月2号一个做硬件的回家了，另一个前一段时间在忙数竞国赛，并未投身到电赛训练中）这边焊接的加法电路好像也存在问题，我不能再摸鱼了，便转身开始辅助硬件这边做加法电路，同时嘱咐其去完成报告（我其实在前一天5月2日下午便说，我要做的早都做完了，写会报告吧，但其实我只是改了封面的队号）。&lt;/p&gt;
+&lt;p&gt;就这样在最后时间，我们开始马马虎虎的赶，要修改方波发生电路，要做加法电路、直流偏置、分压电路。这样看来我们好像什么都没做，所以我在那天开始就开始吐槽，我们好像什么都没做。买的模块只到了移相器，半天也测不明白。5月3日，晚上我紧赶慢赶终于把俩个加法器电路制作完成。我的那个队友也成功把方波发生电路修缮完成。这样看来一切好似都在向好的方向发展。但世事难料，一分耕耘一分收获。我们的大意致使我们的失败已成一种不可避免的事实。&lt;/p&gt;
+&lt;p&gt;第二天，也是交题前的最后一天，中午工作前滤波模块到达，开始调试。调试好，方波电路又出问题，产生方波的频率变成了3k！！，这时我室友也来找我求程序，我已经有点想要放了的节奏，便帮我室友移植我的代码到他的板子上，我开发STM32使用的稚晖君“&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/145801160&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;配置CLion用于STM32开发【优雅の嵌入式开发】&lt;/a&gt;”的这套方案，有时使用PlatformIO进行开发，我的室友使用Keil，同时我会使用git管理代码，我并不想将git的所有分支全部拷贝到室友电脑上，于是我便单独将源码拷出来，重新配置工程，其中也遇到一些困难，同时也去我室友的实验室参观了一下，他的作品如下图。
+&lt;img src=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/edc-school-outstanding.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;1920&#34;
+	srcset=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/edc-school-outstanding_hu_57b37f95191bd351.jpg 480w, https://blog.mokuai.space/post/hard-work-leads-to-success/edc-school-outstanding_hu_1cc4d053e1624b96.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;室友作品&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;56&#34;
+		data-flex-basis=&#34;135px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;参观了他的实验室，听了他的讲解，我其实有点退缩了。我在想到底要不要实物评测（我们的实物感觉十分恶心）。
+&lt;img src=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/give-up-show.jpg&#34;
+	width=&#34;951&#34;
+	height=&#34;1807&#34;
+	srcset=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/give-up-show_hu_c1021398643a51c3.jpg 480w, https://blog.mokuai.space/post/hard-work-leads-to-success/give-up-show_hu_37200fcb513f3909.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;放弃实物展示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;52&#34;
+		data-flex-basis=&#34;126px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;或许是这放弃，让我不再想着赶工了，我也开始渐渐冷静下来，不是那么着急了。开始反思了。这次落得这样的结果的原因是什么，为什么他开始慢慢脱离我们的掌控了。如何把一手好牌大的稀烂？&lt;/p&gt;
+&lt;h2 id=&#34;电赛校赛教训&#34;&gt;电赛校赛教训
+&lt;/h2&gt;&lt;p&gt;俗话说的，吃一堑、长一智。现在踩得坑越深，之后的遇到浅坑就和平地一样。对于电赛校赛，我总结了以下以下经验，也希望对想参与电赛的同学有所启发吧。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取题的第一时间，队伍内所有人确定技术方案。一定要所有人！！之后可以在队长的主导下，分配一人完成仿真，一人开始写报告开始的方案部分，一人开始简单代码工作。&lt;/li&gt;
+&lt;li&gt;焊接相关，使用滑动变阻器代替要使用的特殊位置的定值电阻。对于仪器仪表类（信号处理），精度是十分关键的。但对于电阻，其本身存在一定的误差，难以做到与仿真结果一致，同时焊接过程中可能存在电阻损坏或短路导致短路，从而导致误差，因此使用滑动变阻器可以为之后留有一定的修改空间。&lt;/li&gt;
+&lt;li&gt;整理清楚当前所用材料，使用完放回原位。就本次题目而言，其实即使最后一天也是来得及的，但由于最后的慌乱与实验室的杂乱，导致找东西也浪费不少时间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;回归正题&#34;&gt;回归正题
+&lt;/h2&gt;&lt;p&gt;说了这么多题外话，该说一说正题了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;努力一定有结果吗？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在回答这个问题之前，我觉得首先有必要确定一个概念：要什么样的结果？努力就要有回报、努力就要有比不努力的人更多的回报。&lt;/p&gt;
+&lt;p&gt;我认为“越努力，越幸运”。&lt;code&gt;努力不一定有回报，但你的钢铁身躯会记住的你的经历&lt;/code&gt;。接下来，我将以我个人在大学俩年期间的竞赛经历与从小到大的学习经历为例。逐渐论证这个观点。&lt;/p&gt;
+&lt;p&gt;前一阵的时候，我总被我身边的说起，我很聪明之类的话，说我不学也能会诸如此类的话。这么说，我的内心是幸喜若狂的。毕竟谁不喜欢被同龄所认同与夸赞，不可否认，我是一个世俗的人。他们这么说，我也这么相信。毕竟我是真的没有怎么认真学习过，高中边玩边学，也没怎么努力，考上了一个末流211，在别人眼中，好似别人家长眼中的“别人家的孩子”。但对我而言，好像真的什么都未做。大学也是浑浑噩噩，瞎混，瞎搞。但最后成绩好像也还行。&lt;/p&gt;
+&lt;p&gt;这一切的一切让我沉浸于“我就是聪明，不努力也行”。时间很快，距离六级考试就差一个多月时间，&lt;code&gt;人总会在接近死亡时才会害怕死亡&lt;/code&gt;。对我而言，以目前我所掌握的数据，我只要正常发挥，之后保研将是稳定的，但在我们学校有一要求，保研的硬性要求——过六级。对我而言，我在大一6月并未考六级，去年12月首战六级，以相差一百多分而败北。如果我还想保研，我就必须在今年6月或12月通过六级，明年6月即使通过也无法在保研时间点前获得成绩。对我而言，我仅剩最后2次机会。但我仍记得，我的同学，夸我聪明的其中一人，他裸考六级600+，他好像很聪明？而我却没过六级。&lt;/p&gt;
+&lt;p&gt;我聪明吗？有人会说，每个人都有擅长的领域，术业有专攻，我聪明，他也聪明。可真是如此吗？他们总说“我很聪明”之类的话，我便向着聪明的方向发展，他对我的期望成为我的自我实现的预言，而我相当于完成了他的预言？这是“皮格马利翁效应&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;”，有心理学效应支撑，没错，一定是这样。但好像有问题呀，难道别人说一说你可以，你就可以吗？好像并不行，别人的话语只是对自己的一种暗示，这种暗示只是导火索，爆炸还得靠自己。&lt;/p&gt;
+&lt;p&gt;我没有怎么认真学习过？我好像否定了自己的努力，我有认真学习过。我从小到大都在认真学习！小时候我很好学，我至今仍记得俩件事，我小学的时候，总喜欢找数学老师去问题，刚开始是去问问题，但后来，我总觉得觉得自己很厉害，便开始研究怎么把老师难住（那个时候网络还不发达，没有什么拍照搜题之类的工具），现在或许回头看问的问题或许很幼稚，但真是当初那位数学老师&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;不断的解答，我不断出题，锻炼我在该方面思维。另一件事是我小学有一段时间沉迷于研究找规律，当初学了能除以3的数所有位数相加都是3的倍数，我便在想别的数呢，如何快速判断一个数能否被别的数整除，比如7或4。我沉迷于找到一个简单的数学形式判断这个问题，我还沉迷于找一个图形中最多有多少个三角形之类的问题，这个问题记得形象极其深刻，我小学放学过马路时曾被轿车撞后便沉迷这个问题，在等交警的时候便在研究这个问题（不能让脑子闲下来，浪费时间）。&lt;/p&gt;
+&lt;p&gt;我觉得真是因为小学的这种锻炼，让我对这个方面上手速度加快，从而造成我看似很聪明的现象。我将1+1掌握的极其牢固，之后9*9就会很简单，别人1+1还不怎么懂，9*9当然很难学会,不是说学不会，是很难。当然举例或许夸张，但我认为这一观点可以在自己遇到挫折分析原因时作参考。&lt;code&gt;现在失败可能是在还过去的债&lt;/code&gt;。基于这个观点，分析我六级为何没过，因为我英语欠的债太多太多。我是仅在刚学英语时有认真付出，但仅仅局限于“What&amp;rsquo;s your name?”，之后便是初二末期，为了中考不得不学习英语，但接触便是应试教育的那一套——如何在你不会做的情况下，把题作对。这短期来看收益最大，但却造成了我长期以来英语漏洞的越来越大。或许英语的问题便在六级处显现了，还是那位600+的同学，他说他英语完全在吃老本，高中到现在都没学过英语，不过他小时候，每天早上听英语音频跟读。他好像和我一样都在“吃老本”。这便是我最开始说的“努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;
+&lt;p&gt;这件事也让我想起一件事，我在上个学期曾跟着中长跑田径队训练了一段时间，寒假期间到这个学习一直没有怎么练，最近闲下来才有时间捡起来恢复一下，我有明显的感觉，我即使有一段时间没有认真练过，但我的实力也相比于大一刚开学强不少。前几天2024年美国大学生数学建模大赛成绩出了，我们队H奖，但实话实说，我感觉我什么都没做，我买了北海的课程，但从没看过。参加了大学生数学建模竞赛，感觉啥都没做，就是一个省一。所以，我给予评价：数模很水。事实好像并不是这样的，我们学校照样有一堆S（successful Participant）奖，甚至还有U（unsuccessful Participant）奖。当然M奖与F奖也有不少。
+&lt;img src=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/running.jpg&#34;
+	width=&#34;1170&#34;
+	height=&#34;6436&#34;
+	srcset=&#34;https://blog.mokuai.space/post/hard-work-leads-to-success/running_hu_1514ce67767ea687.jpg 480w, https://blog.mokuai.space/post/hard-work-leads-to-success/running_hu_87433a6c0de8c011.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;跑步截图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;18&#34;
+		data-flex-basis=&#34;43px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我竞赛的获奖好像都是在吃老本，截至目前为止，大学我参与过ACM、数学建模、数学竞赛。这些竞赛我都能取得一些小成就，原因在哪？竞赛水平不行？显然是错的，我而是我的老本足够厚，这让我能取得一些小成绩，正是这些小成绩，我对外说，竞赛其实很简单。别人在趋利的形式下，进入竞赛，他努力了或许就有结果。没努力呢？他成为别人有老本的人的垫子&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。而没努力获奖的人又会去告诉别人这个竞赛很简单，形成了对部分人的“良性循环”。这部分人，他们无论如何是有老本，曾经努力过的，所以他们能够幸运的进入“良性循环”之中。&lt;/p&gt;
+&lt;p&gt;现在再次回答最开始的问题，努力一定有结果吗？明确一个概念：结果是指努力的人就要有比不努力的人更多的回报。我的答案是“努力不一定有结果。但越努力，越幸运，努力不一定有回报，但你的钢铁身躯会记住的你的经历”。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;皮格马利翁效应，又称罗森塔尔效应，通常指一个人对另一个人行为的期望成为自我实现的预言的现象。最早由罗伯特·罗森塔尔（Robert Rosenthal）与伊迪丝·雅各布森（Edith Jacobson）正式提出。他们在实验中从班级中随机挑选部分学生，告诉教师这些学生拥有过人的智力水平，极具发展潜能，但要对其他人保密。一段时间后发现这些被随机选中的学生成绩进步很大，且变得十分自信积极。总结来说，是教师对学生形成的期望会使学生的学习成绩和行为表现向符合该期望的方向发展。这一效应启示我们，如果你对他人有所期待，可以通过以真诚的态度对待对方，给予其由衷的赞赏，从而调动其积极性，促使其朝着自己所期望的方向发展，这份期待或许就会成真。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;在此感谢那位数学老师的知道，我忘记了您的名字，但您对我启迪够我受益终身，鞠躬致谢！&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;大多数竞赛参赛人数的比例发奖，一个竞赛参与人数越多，就有越多的人能获奖，而对于没有获奖的人，一般称其为垫子，因为他的参与可能使一些本不能获奖的人获奖，帮助别人垫高了。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
